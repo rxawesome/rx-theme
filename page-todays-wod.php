@@ -1,59 +1,48 @@
 <?php get_header(); ?>
 
-			<div id="content">
+<div id="content">
+	<div id="inner-content" class="wrap clearfix">
 
-				<div id="inner-content" class="wrap clearfix">
+		<div id="main" class="sevencol first clearfix" role="main">
+		<? if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-						<div id="main" class="sevencol first clearfix" role="main">
+			<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				<header class="article-header">
+					<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
+				</header> <!-- end article header -->
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+				<section class="entry-content clearfix" itemprop="articleBody">
+					<?php the_content(); ?>
+				</section> <!-- end article section -->
 
-								<header class="article-header">
+				<footer class="article-footer">
+					<?php the_tags('<span class="tags">' . __('Tags:', 'bonestheme') . '</span> ', ', ', ''); ?>
+				</footer> <!-- end article footer -->
 
-									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
+				<?php comments_template(); ?>
 
+			</article> <!-- end article -->
 
-								</header> <!-- end article header -->
+		<? endwhile; else : ?>
 
-								<section class="entry-content clearfix" itemprop="articleBody">
-									<?php the_content(); ?>
-							</section> <!-- end article section -->
+			<article id="post-not-found" class="hentry clearfix">
+				<header class="article-header">
+					<h1><?php _e("Oops, Post Not Found!", "bonestheme"); ?></h1>
+				</header>
+				<section class="entry-content">
+					<p><?php _e("Uh Oh. Something is missing. Try double checking things.", "bonestheme"); ?></p>
+				</section>
+			</article>
 
-								<footer class="article-footer">
-									<?php the_tags('<span class="tags">' . __('Tags:', 'bonestheme') . '</span> ', ', ', ''); ?>
+		<? endif; ?>
+		</div> <!-- end #main -->
 
-								</footer> <!-- end article footer -->
+		<div id="side" class="fourcol last">
+			<? get_sidebar(); ?>
+		</div>
 
-								<?php comments_template(); ?>
-
-							</article> <!-- end article -->
-
-							<?php endwhile; else : ?>
-
-									<article id="post-not-found" class="hentry clearfix">
-										<header class="article-header">
-											<h1><?php _e("Oops, Post Not Found!", "bonestheme"); ?></h1>
-										</header>
-										<section class="entry-content">
-											<p><?php _e("Uh Oh. Something is missing. Try double checking things.", "bonestheme"); ?></p>
-										</section>
-										<footer class="article-footer">
-												<p><?php _e("This is the error message in the page.php template.", "bonestheme"); ?></p>
-										</footer>
-									</article>
-
-							<?php endif; ?>
-
-						</div> <!-- end #main -->
-
-						<div id="side" class="fourcol last">
-							<?php get_sidebar(); ?>
-						</div>
-
-				</div> <!-- end #inner-content -->
-
-			</div> <!-- end #content -->
+	</div> <!-- end #inner-content -->
+</div> <!-- end #content -->
 
 <?php get_footer(); ?>

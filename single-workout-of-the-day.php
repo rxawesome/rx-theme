@@ -1,65 +1,52 @@
 <?php get_header(); ?>
 
-			<div id="content">
+<div id="content">
+	<div id="inner-content" class="wrap clearfix">
 
-				<div id="inner-content" class="wrap clearfix">
+		<div id="main" class="eightcol first clearfix" role="main">
+		<? if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-					<div id="main" class="eightcol first clearfix" role="main">
+			<article id="post-<? the_ID(); ?>" <? post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				<header class="article-header">
+					<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
+					<p class="byline vcard"><?php
+						printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&amp;</span> filed under %4$s.', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( get_option('date_format')), bones_get_the_author_posts_link(), get_the_category_list(', ') );
+					?></p>
+					<div class="featured"><? the_post_thumbnail('bones-thumb-600'); ?></div><!-- /.featured -->
+				</header> <!-- end article header -->
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+				<section class="entry-content clearfix" itemprop="articleBody">
+					<?php the_content(); ?>
+				</section> <!-- end article section -->
 
-								<header class="article-header">
-									<h1 class="page-title single-title" itemprop="headline"><?php the_title(); ?></h1>
-																		<p class="byline vcard"><?php
-										printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&amp;</span> filed under %4$s.', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( get_option('date_format')), bones_get_the_author_posts_link(), get_the_category_list(', ') );
-									?></p>
+				<footer class="article-footer">
+					<? the_tags('<p class="tags"><span class="tags-title">' . __('Tags:', 'bonestheme') . '</span> ', ', ', '</p>'); ?>
+				</footer> <!-- end article footer -->
+				
+				<? comments_template(); ?>
 
-									<div class="featured"><? the_post_thumbnail('bones-thumb-600'); ?></div><!-- /.featured -->
+			</article> <!-- end article -->
 
-								</header> <!-- end article header -->
+		<? endwhile; else : ?>
 
-								<section class="entry-content clearfix" itemprop="articleBody">
-									<?php the_content(); ?>
-								</section> <!-- end article section -->
+			<article id="post-not-found" class="hentry clearfix">
+				<header class="article-header">
+					<h1><? _e("Oops, Post Not Found!", "bonestheme"); ?></h1>
+				</header>
+				<section class="entry-content">
+					<p><? _e("Uh Oh. Something is missing. Try double checking things.", "bonestheme"); ?></p>
+				</section>
+			</article>
 
-								<footer class="article-footer">
-									<?php the_tags('<p class="tags"><span class="tags-title">' . __('Tags:', 'bonestheme') . '</span> ', ', ', '</p>'); ?>
+		<? endif; ?>
+		</div> <!-- end #main -->
 
-								</footer> <!-- end article footer -->
-								
-								<?php comments_template(); ?>
+		<div id="side" class="fourcol last">
+			<? get_sidebar(); ?>
+		</div>
 
-
-							</article> <!-- end article -->
-
-						<?php endwhile; ?>
-
-						<?php else : ?>
-
-							<article id="post-not-found" class="hentry clearfix">
-									<header class="article-header">
-										<h1><?php _e("Oops, Post Not Found!", "bonestheme"); ?></h1>
-									</header>
-									<section class="entry-content">
-										<p><?php _e("Uh Oh. Something is missing. Try double checking things.", "bonestheme"); ?></p>
-									</section>
-									<footer class="article-footer">
-											<p><?php _e("This is the error message in the single.php template.", "bonestheme"); ?></p>
-									</footer>
-							</article>
-
-						<?php endif; ?>
-
-					</div> <!-- end #main -->
-
-						<div id="side" class="fourcol last">
-							<?php get_sidebar(); ?>
-						</div>
-
-				</div> <!-- end #inner-content -->
-
-			</div> <!-- end #content -->
+	</div> <!-- end #inner-content -->
+</div> <!-- end #content -->
 
 <?php get_footer(); ?>
