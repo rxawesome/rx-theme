@@ -6,7 +6,7 @@
 		<div id="main" class="eightcol first clearfix" role="main">
 		<? if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+			<article id="post-<? the_ID(); ?>" <? post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 				<header class="article-header">
 					<h1 class="page-title" itemprop="headline"><? the_title(); ?></h1>
@@ -17,12 +17,13 @@
 				</header> <!-- end article header -->
 
 				<section class="entry-content clearfix" itemprop="articleBody">
-					<?php the_content(); ?>
+					<? the_content(); ?>
 				</section> <!-- end article section -->
 
+				<!--
 				<footer class="article-footer">
-					<?php the_tags('<p class="tags"><span class="tags-title">' . __('Tags:', 'bonestheme') . '</span> ', ', ', '</p>'); ?>
-				</footer> <!-- end article footer -->
+					<? the_tags('<p class="tags"><span class="tags-title">' . __('Tags:', 'bonestheme') . '</span> ', ', ', '</p>'); ?>
+				</footer>--> <!-- end article footer -->
 				
 				<? comments_template(); ?>
 

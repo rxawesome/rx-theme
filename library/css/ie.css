@@ -99,6 +99,9 @@ TYPOGRAPHY
   font-family: "akzidenzmd", 'Trebuchet MS', helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 }
 /* 
 use the best ampersand 
@@ -188,16 +191,16 @@ BUTTONS
   border: 1px solid #be0d37;
   border-top-color: #db0f3f;
   border-left-color: #db0f3f;
-  padding: 4px 12px;
+  padding: .5em 1em;
   color: #ffffff;
   display: inline-block;
-  font-size: 11px;
+  font-size: 1.2em;
   font-weight: bold;
   text-decoration: none;
   text-shadow: 0 1px rgba(0, 0, 0, 0.75);
   cursor: pointer;
   margin-bottom: 20px;
-  line-height: 21px;
+  line-height: 1em;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
@@ -294,22 +297,28 @@ NAVIGATION STYLES
 /* .menu is clearfixed inside mixins.scss */
 .menu {
   /* end .menu ul */
+
 }
 .menu ul {
   /* end .menu ul li */
+
   /* highlight current page */
+
   /* end current highlighters */
+
 }
 .menu ul li {
   /*
 				plan your menus and drop-downs wisely.
 				*/
+
 }
 .menu ul li a {
   /*
 					you can use hover styles here even though this size
 					has the possibility of being a mobile device.
 					*/
+
 }
 /* end .menu */
 /*********************
@@ -318,6 +327,7 @@ POSTS & CONTENT STYLES
 /* entry content */
 .entry-content {
   /* at this larger size, we can start to align images */
+
 }
 .entry-content .alignleft,
 .entry-content img.alignleft {
@@ -533,8 +543,11 @@ NAVIGATION STYLES
   background: #eee;
   border: 0;
   /* end .menu ul li */
+
   /* highlight current page */
+
   /* end current highlighters */
+
 }
 .nav li {
   float: left;
@@ -542,7 +555,9 @@ NAVIGATION STYLES
   /*
 		plan your menus and drop-downs wisely.
 		*/
+
   /* showing sub-menus */
+
 }
 .nav li a {
   border-bottom: 0;
@@ -550,6 +565,7 @@ NAVIGATION STYLES
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
 			*/
+
 }
 .nav li a:hover,
 .nav li a:focus {
@@ -564,6 +580,7 @@ NAVIGATION STYLES
   display: none;
   z-index: 8999;
   /* highlight sub-menu current page */
+
 }
 .nav li ul.sub-menu li,
 .nav li ul.children li {
@@ -572,6 +589,7 @@ NAVIGATION STYLES
 				just remember deeper menus suck
 				for usability. k, bai.
 				*/
+
 }
 .nav li ul.sub-menu li a,
 .nav li ul.children li a {
@@ -645,6 +663,7 @@ SIDEBARS & ASIDES
 .widget ul li {
   margin-bottom: 0.75em;
   /* deep nesting */
+
 }
 .widget ul li ul {
   margin-top: 0.75em;
@@ -675,6 +694,7 @@ mobile. Make sure to double check these!
 			it's very rare to have multi-depth menus in
 			the footer.
 			*/
+
 }
 /* end .footer-links */
 /******************************************************************

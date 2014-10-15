@@ -9,38 +9,38 @@
 			<div class="loop">
 		<? if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+				<article id="post-<? the_ID(); ?>" <? post_class('clearfix'); ?> role="article">
 
 					<header class="article-header">
 						<h2 class="entry-title"><a href="<? the_permalink() ?>" rel="bookmark" title="<? the_title_attribute(); ?>"><? the_title(); ?></a></h2>
-						<p class="byline vcard"><?php
+						<p class="byline vcard"><?
 							printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&</span> filed under %4$s.', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'bonestheme' ) ), bones_get_the_author_posts_link(), get_the_category_list(', ') );
 						?></p>
 					</header> <!-- end article header -->
 
 					<section class="entry-content">
-						<?php the_excerpt('<span class="read-more">' . __('Read more &raquo;', 'bonestheme') . '</span>'); ?>
+						<? the_excerpt('<span class="read-more">' . __('Read more &raquo;', 'bonestheme') . '</span>'); ?>
 					</section> <!-- end article section -->
 
 					<footer class="article-footer">
 						<div class="entry-utility">
-							<?php if (count(get_the_category())) : ?>
+							<? if (count(get_the_category())) : ?>
 								<span class="cat-links">
-									<?php printf(__('<span class="%1$s">Posted in</span> %2$s', 'twentyten'), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list(', ')); ?>
+									<? printf(__('<span class="%1$s">Posted in</span> %2$s', 'twentyten'), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list(', ')); ?>
 								</span>
 								<span class="meta-sep">|</span>
-							<?php endif; ?>
-							<?php
+							<? endif; ?>
+							<?
 								$tags_list = get_the_tag_list('', ', ');
 								if ($tags_list):
 							?>
 								<span class="tag-links">
-									<?php printf(__('<span class="%1$s">Tagged</span> %2$s', 'twentyten'), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list); ?>
+									<? printf(__('<span class="%1$s">Tagged</span> %2$s', 'twentyten'), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list); ?>
 								</span>
 								<span class="meta-sep">|</span>
-							<?php endif; ?>
-							<span class="comments-link"><?php comments_popup_link(__('Leave a comment', 'twentyten'), __('1 Comment', 'twentyten'), __('% Comments', 'twentyten')); ?></span>
-							<?php edit_post_link(__('Edit', 'twentyten'), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>'); ?>
+							<? endif; ?>
+							<span class="comments-link"><? comments_popup_link(__('Leave a comment', 'twentyten'), __('1 Comment', 'twentyten'), __('% Comments', 'twentyten')); ?></span>
+							<? edit_post_link(__('Edit', 'twentyten'), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>'); ?>
 						</div><!-- /.entry-utility -->
 
 					</footer> <!-- end article footer -->
@@ -55,8 +55,8 @@
 			<? } else { ?>
 				<nav class="wp-prev-next">
 					<ul class="clearfix">
-						<li class="prev-link"><?php next_posts_link(__('&laquo; Older Entries', "bonestheme")) ?></li>
-						<li class="next-link"><?php previous_posts_link(__('Newer Entries &raquo;', "bonestheme")) ?></li>
+						<li class="prev-link"><? next_posts_link(__('&laquo; Older Entries', "bonestheme")) ?></li>
+						<li class="next-link"><? previous_posts_link(__('Newer Entries &raquo;', "bonestheme")) ?></li>
 					</ul>
 				</nav>
 			<? } ?>
@@ -76,7 +76,7 @@
 		</div> <!-- end #main -->
 
 		<div id="side" class="fourcol last">
-			<?php get_sidebar(); ?>
+			<? get_sidebar(); ?>
 		</div>
 
 	</div> <!-- end #inner-content -->

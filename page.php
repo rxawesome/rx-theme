@@ -6,10 +6,10 @@
 		<div id="main" class="eightcol first clearfix" role="main">
 		<? if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+			<article id="post-<? the_ID(); ?>" <? post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 				<header class="article-header">
-					<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
+					<h1 class="page-title" itemprop="headline"><? the_title(); ?></h1>
 					<div class="featured"><? the_post_thumbnail('bones-thumb-600'); ?></div>
 				</header> <!-- end article header -->
 
