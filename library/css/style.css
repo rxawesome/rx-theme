@@ -66,10 +66,11 @@ audio:not([controls]) {
 html {
   font-size: 100%;
   /* 1 */
+
   -webkit-text-size-adjust: 100%;
-  /* 2 */
   -ms-text-size-adjust: 100%;
   /* 2 */
+
 }
 /*
  * Addresses `font-family` inconsistency between `textarea` and other form
@@ -268,8 +269,10 @@ nav ol {
 img {
   border: 0;
   /* 1 */
+
   -ms-interpolation-mode: bicubic;
   /* 2 */
+
 }
 /*
  * Corrects overflow displayed oddly in IE9.
@@ -311,11 +314,14 @@ fieldset {
 legend {
   border: 0;
   /* 1 */
+
   padding: 0;
   white-space: normal;
   /* 2 */
+
   *margin-left: -7px;
   /* 3 */
+
 }
 /*
  * 1. Corrects font size not being inherited in all browsers.
@@ -328,12 +334,14 @@ select,
 textarea {
   font-size: 100%;
   /* 1 */
+
   margin: 0;
   /* 2 */
+
   vertical-align: baseline;
-  /* 3 */
   *vertical-align: middle;
   /* 3 */
+
 }
 /*
  * Addresses FF3/4 setting `line-height` on `input` using `!important` in the
@@ -358,10 +366,13 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
+
   cursor: pointer;
   /* 3 */
+
   *overflow: visible;
   /* 4 */
+
 }
 /*
  * Re-set default cursor for disabled elements.
@@ -380,12 +391,14 @@ input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
+
   padding: 0;
   /* 2 */
+
   *height: 13px;
-  /* 3 */
   *width: 13px;
   /* 3 */
+
 }
 /*
  * 1. Addresses `appearance` set to `searchfield` in S5, Chrome.
@@ -395,9 +408,11 @@ input[type="radio"] {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
+
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   /* 2 */
+
   box-sizing: content-box;
 }
 /*
@@ -422,8 +437,10 @@ input::-moz-focus-inner {
 textarea {
   overflow: auto;
   /* 1 */
+
   vertical-align: top;
   /* 2 */
+
 }
 /* ==========================================================================
    Tables
@@ -556,6 +573,9 @@ TYPOGRAPHY
   font-family: "akzidenzmd", 'Trebuchet MS', helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 }
 /* 
 use the best ampersand 
@@ -645,16 +665,16 @@ BUTTONS
   border: 1px solid #be0d37;
   border-top-color: #db0f3f;
   border-left-color: #db0f3f;
-  padding: 4px 12px;
+  padding: .5em 1em;
   color: #ffffff;
   display: inline-block;
-  font-size: 11px;
+  font-size: 1.2em;
   font-weight: bold;
   text-decoration: none;
   text-shadow: 0 1px rgba(0, 0, 0, 0.75);
   cursor: pointer;
   margin-bottom: 20px;
-  line-height: 21px;
+  line-height: 1em;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
@@ -801,6 +821,9 @@ Base Styles
   font-family: "akzidenzmd", 'Trebuchet MS', helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 }
 .button:hover,
 .button:visited:hover {
@@ -811,9 +834,15 @@ Base Styles
 /*********************
 Larger Mobile Device
 *********************/
+@media only screen and (min-width: 481px) {
+  
+}
 /*********************
 Tablet & Up
 *********************/
+@media only screen and (min-width: 768px) {
+  
+}
 /*
 BASE (MOBILE) SIZE
 This are the mobile styles. It's what people see on their phones. If
@@ -854,21 +883,25 @@ and will be used across all viewports.
 html,
 body {
   /* height: 100%; */
+
 }
 body {
   font-family: 'Trebuchet MS', helvetica, sans-serif;
   font-size: 100%;
-  line-height: 1.5;
+  line-height: 1.4;
   color: #222222;
 }
 /********************
 02. WORDPRESS BODY CLASSES
     style a page via class
 ********************/
+.featured img {
+  width: 100%;
+  height: auto;
+}
 /* for sites that are read right to left (i.e. hebrew) */
 /* home page */
 /* blog template page */
-/* archive page */
 /* date archive page */
 /* replace the number to the corresponding page number */
 /* search page */
@@ -876,6 +909,10 @@ body {
 /* no results search page */
 /* individual paged search (i.e. body.search-paged-3) */
 /* 404 page */
+.single .featured img {
+  width: 100%;
+  height: auto;
+}
 /* single post page */
 /* individual post page by id (i.e. body.postid-73) */
 /* individual paged single (i.e. body.single-paged-3) */
@@ -915,8 +952,11 @@ a:visited {
   color: #2873b5;
   text-decoration: none;
   /* on hover */
+
   /* on click */
+
   /* mobile tap color */
+
 }
 a:hover,
 a:visited:hover,
@@ -931,6 +971,7 @@ a:visited:link {
 		so it basically works like the :hover selector
 		for mobile devices.
 		*/
+
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
 }
 /******************************************************************
@@ -954,37 +995,66 @@ h5,
   font-family: "akzidenzmd", 'Trebuchet MS', helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
-  /*
-	if you're going to use webfonts, be sure to check your weights
-	http://css-tricks.com/watch-your-font-weight/
-	*/
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  line-height: 1.3em;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+  margin-bottom: 0.3em;
 }
 h1,
 .h1 {
   font-size: 2.5em;
-  line-height: 1.333em;
 }
 h2,
 .h2 {
-  font-size: 1.75em;
-  line-height: 1.4em;
-  margin-bottom: 0.375em;
+  font-size: 2.1em;
 }
 h3,
 .h3 {
-  font-size: 1.125em;
+  font-size: 1.8em;
 }
 h4,
 .h4 {
-  font-size: 1.1em;
-  font-weight: 700;
+  font-size: 1.5em;
 }
 h5,
 .h5 {
-  font-size: 0.846em;
-  line-height: 2.09em;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  font-size: 1.2em;
+}
+h1.page-title {
+  font-size: 3em !important;
+  border-bottom: 1px dotted #222222;
+  margin: 0 0 .3em 0 !important;
+  padding: 0 0 .1em 0 !important;
+  line-height: 1.3em !important;
+}
+h2.entry-title {
+  margin: 0;
+}
+h3.widget-title {
+  font-size: 2.25em;
+  margin: 0 0 .1em 0;
+}
+h3.widget-title a {
+  color: #222222;
+}
+h3.comments-title,
+h3.reply-title {
+  font-size: 1.85em;
+  border-bottom: 1px dotted #222222;
+  padding: 0 0 .4em 0;
+  margin-bottom: .4em;
 }
 /*********************
 06. HEADER SYTLES
@@ -1001,16 +1071,38 @@ h5,
 }
 .header #topbar #contact ul li {
   display: inline-block;
-  margin: 0.4em 0;
+  padding-left: 24px;
+  margin: .6em 0 .4em 0;
 }
 .header #topbar #contact ul li a {
   font-size: 1.25em;
 }
+.header #topbar #contact ul li.icon-phone {
+  background: url("../../library/images/icon-phone.png") no-repeat;
+}
+.header #topbar #contact ul li.icon-email {
+  background: url("../../library/images/icon-mail.png") no-repeat;
+}
+.header #topbar #contact ul li.icon-map {
+  background: url("../../library/images/icon-location.png") no-repeat;
+}
 .header #topbar #social {
   text-align: center;
 }
+.header #topbar #social .socialstickers {
+  margin: 0;
+}
+.header #topbar #social .socialstickers .like_button {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 3px;
+  width: 140px;
+}
+.header #topbar #social .icon {
+  display: inline-block;
+}
 .header #topbar #social .icons {
-  margin-top: .45em;
+  margin-top: 0.45em;
 }
 .header #topbar #social .icons a img {
   margin: 0.2em 0;
@@ -1024,9 +1116,13 @@ h5,
 }
 .header nav #megaMenu #megaMenuToggle {
   color: #ffffff;
+  font-size: 1.5em;
   font-family: "akzidenzmd", 'Trebuchet MS', helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 }
 .header nav #megaMenu #megaMenuToggle:hover {
   color: #2873b5;
@@ -1037,6 +1133,9 @@ h5,
   font-family: "akzidenzmd", 'Trebuchet MS', helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 }
 .header nav #megaMenu #megaUber li a:hover {
   color: #2873b5;
@@ -1045,7 +1144,7 @@ h5,
   display: none;
 }
 .header nav #megaMenu #megaUber li a span {
-  font-size: 1.7em;
+  font-size: 1.8em;
 }
 .header nav #megaMenu #megaUber li .sub-menu {
   background: black;
@@ -1070,67 +1169,44 @@ h5,
 /*********************
 07. NAVIGATION STYLES
 *********************/
-/*
-all navs have a .nav class applied via
-the wp_menu function; this is so we can
-easily write one group of styles for
-the navs on the site so our css is cleaner
-and more scalable.
-*/
-.nav {
-  border: 1px solid #ccc;
-  border-bottom: 0;
-  /* end .menu li */
-  /* highlight current page */
-  /* end current highlighters */
-}
-.nav li {
-  /*
-		so you really have to rethink your dropdowns for mobile.
-		you don't want to have it expand too much because the
-		screen is so small. How you manage your menu should
-		depend on the project. Here's some great info on it:
-		http://www.alistapart.com/articles/organizing-mobile/
-		*/
-}
-.nav li a {
-  display: block;
-  text-decoration: none;
-  padding: 10px 10px;
-  background-color: #eee;
-  border-bottom: 1px solid #ccc;
-  /*
-			remember this is for mobile ONLY, so there's no need
-			to even declare hover styles here, you can do it in
-			the style.scss file where it's relevant. We want to
-			keep this file as small as possible!
-			*/
-}
-.nav li ul.sub-menu li a,
-.nav li ul.children li a {
-  padding-left: 30px;
-}
-/* end .nav */
 /*********************
 08. POSTS & CONTENT STYLES
 *********************/
 #content {
   margin-top: 2.2em;
+  padding-bottom: 2em;
 }
-#top-content .call_block {
-  text-align: center;
+#content ol {
+  list-style-type: decimal;
 }
-#top-content .call_block a img {
-  width: 100%;
-  height: auto;
+#content ul {
+  list-style-type: disc;
 }
-#bottom-content .column .story .title h2 {
-  line-height: 32px;
-  font-size: 45px;
+#content input,
+#content textarea {
+  font-size: 1em;
+}
+#content ol,
+#content ul {
+  padding: 0;
+  padding-left: 25px;
+}
+#content ol li,
+#content ul li {
+  padding: 0;
+  margin: 8px 0;
+}
+#content ol li ol,
+#content ul li ol,
+#content ol li ul,
+#content ul li ul {
   margin: 0;
-  padding: 0 20px;
-  color: #ffffff;
-  text-align: left;
+}
+#content ol li ol li,
+#content ul li ol li,
+#content ol li ul li,
+#content ul li ul li {
+  padding-left: 25px;
 }
 .trainer {
   border-bottom: 1px solid #DDDDDD;
@@ -1154,6 +1230,8 @@ and more scalable.
 }
 .trainer .details h4 {
   margin: 0;
+  font-weight: normal;
+  font-size: 1.2em;
 }
 .trainer .details ul {
   list-style: disc;
@@ -1162,15 +1240,34 @@ and more scalable.
 .trainer .details ul li {
   list-style-position: inside;
 }
-/* end .hentry */
-.single-title,
-.page-title {
-  border-bottom: 1px dotted #000;
-  font-size: 2.5em;
-  margin-top: 0px;
+.qa-faqs .qa-faq {
+  border: 1px solid #bbbbbb;
+  padding: 0 1em;
+  margin-bottom: .5em;
+  background: #EEE;
 }
-.archive-title {
-  margin-top: 0px;
+.qa-faqs .qa-faq .qa-faq-title {
+  font-size: 1em;
+  margin: .5em 0;
+}
+.qa-faqs .qa-faq .qa-faq-title a {
+  color: #222222;
+  font-size: 1.2em;
+}
+.loop {
+  /* end .hentry */
+
+}
+.loop .hentry {
+  padding: 2.5em 0 3em;
+  border-top: 1px solid #bbbbbb;
+}
+.loop .hentry:first-child {
+  padding-top: 1.5em;
+  border-top: 0;
+}
+.gform_wrapper ul.gform_fields {
+  padding: 0;
 }
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
@@ -1179,10 +1276,18 @@ and more scalable.
 /* general style on an attatchment */
 /* sticky post style */
 /* hentry class */
+.category-blog .wp-post-image {
+  width: 100%;
+  height: auto;
+}
 /* style by category (i.e. category-videos) */
 /* style by tag (i.e. tag-news) */
 /* post meta */
-.byline {
+.tags,
+.byline,
+.entry-utility {
+  margin: 0;
+  font-size: .9em;
   color: #999;
 }
 /* entry content */
@@ -1193,6 +1298,7 @@ and more scalable.
 			and floating images at the next breakpoint,
 			but it's up to you. Feel free to change it up.
 			*/
+
 }
 .entry-content dd {
   margin-left: 0;
@@ -1208,7 +1314,6 @@ and more scalable.
 .entry-content video,
 .entry-content object {
   max-width: 100%;
-  height: auto;
 }
 .entry-content pre {
   background: #eee;
@@ -1221,6 +1326,7 @@ and more scalable.
   background: #eee;
   padding: 5px;
   /* images inside wp-caption */
+
 }
 .wp-caption img {
   max-width: 100%;
@@ -1244,29 +1350,37 @@ and more scalable.
   margin: 1.1em 0 2.2em;
 }
 .bones_page_navi {
+  list-style-type: none !important;
   /* current page link */
+
   /* end .bones_page_navi .bpn-current */
+
   /* common styles for page-navi links */
+
   /* remove the bg on end links */
+
   /* previous link */
+
   /* next page link */
+
   /* first page link */
+
   /* last page link */
+
 }
 .bones_page_navi li {
   float: left;
   margin-left: 10px;
+}
+.bones_page_navi li:hover,
+.bones_page_navi li:focus {
+  border-bottom: 2px solid #2873b5;
 }
 .bones_page_navi li a {
   padding: 3px 6px;
   display: block;
   text-decoration: none;
   position: relative;
-}
-.bones_page_navi li a:hover,
-.bones_page_navi li a:focus {
-  color: #222222;
-  text-decoration: underline;
 }
 .bones_page_navi li.bpn-current {
   padding: 3px 6px;
@@ -1275,6 +1389,7 @@ and more scalable.
 }
 .bones_page_navi li.bpn-current a {
   /* hovering on current page link */
+
 }
 .bones_page_navi li.bpn-prev-link,
 .bones_page_navi li.bpn-next-link {
@@ -1305,16 +1420,25 @@ and more scalable.
 /* h3 comment title */
 #comments {
   /* number of comments span */
+
 }
 .commentlist {
   /* general comment classes */
+
   /* vcard */
+
   /* end .commentlist .vcard */
+
   /* comment meta */
+
   /* comment content */
+
   /* end .commentlist .comment_content */
+
   /* comment reply link */
+
   /* end .commentlist .comment-reply-link */
+
 }
 .commentlist li {
   position: relative;
@@ -1324,6 +1448,7 @@ and more scalable.
   margin-bottom: 1.5em;
   padding: 0.7335em 10px;
   /* end .commentlist li ul.children */
+
 }
 .commentlist li:last-child {
   margin-bottom: 0;
@@ -1331,7 +1456,9 @@ and more scalable.
 .commentlist li ul.children {
   margin: 0;
   /* variations */
+
   /* change number for different depth */
+
 }
 .commentlist li[class*=depth-] {
   margin-top: 1.1em;
@@ -1404,7 +1531,7 @@ and more scalable.
 11. COMMENT FORM STYLES
 ******************************************************************/
 .respond-form {
-  margin: 1.5em 10px;
+  margin: 1.5em 0;
   padding-bottom: 2.2em;
 }
 .respond-form form {
@@ -1428,6 +1555,7 @@ and more scalable.
   border: 2px solid #cecece;
   line-height: 1.5em;
   /* form validation */
+
 }
 .respond-form form input[type=text]:focus,
 .respond-form form input[type=email]:focus,
@@ -1476,12 +1604,57 @@ and more scalable.
 /*********************
 12. SIDEBARS & ASIDES
 *********************/
-#side .widget-title {
-  font-size: 1.5em;
-  margin-top: 0;
+#side {
+  margin-bottom: 1em;
+}
+#side .widget-container {
+  padding-bottom: 2em;
+}
+#side .widget-container.wod .post {
+  padding: 15px;
+  background: #efefef;
+}
+#side .widget-container.wod .post .entry-title {
+  margin: 0;
+  font-size: 1.8em;
+  padding-bottom: .3em;
+  border-bottom: 1px solid #CCC;
+  line-height: 1em;
+}
+#side .widget-container.wod .post .entry-content {
+  font-size: .9em;
+}
+#side .widget-container.wod .post .entry-content ul {
+  padding-left: 25px;
+}
+#side .widget-container.wod .post .entry-content ul li {
+  color: #222222;
+  padding: .3em 0;
+  list-style-type: disc;
+  text-transform: none;
+  background: none;
+  font-weight: normal;
+}
+#side .widget-container.wod .post .entry-content ul li a {
+  color: #2873b5;
+}
+#side .widget-container.wod .post .entry-utility {
+  text-transform: none;
+  font-size: 0.85em;
+  color: #bbbbbb;
+  border-top: 1px solid #CCC;
+  padding-top: 10px;
+}
+#side .widget-container.advanced_recent_posts_widget {
+  font-size: 1em !important;
+  line-height: 1.4em !important;
+}
+#side .widget-container.advanced_recent_posts_widget a.post-title {
+  font-size: 1em;
 }
 #side ul {
   margin-top: 0;
+  padding-left: 0;
 }
 #side ul li {
   margin: 0 0 2px;
@@ -1489,7 +1662,10 @@ and more scalable.
   color: #2873b5;
   font-weight: bold;
   background: #222222;
+  list-style: none;
+  text-transform: uppercase;
   /* deep nesting */
+
 }
 #side ul li.current_page_item a {
   color: #ffffff;
@@ -1503,17 +1679,23 @@ and more scalable.
 .footer {
   clear: both;
   background-color: #383838;
+  padding: 2em 0;
 }
 .footer .menu-main-menu-container ul li {
   display: inline-block;
-  min-width: 49%;
+  min-width: 100%;
 }
 .footer .menu-main-menu-container .sub-menu {
   display: none;
 }
+.footer .widget-container {
+  padding-bottom: 2em;
+}
 .footer .widget-container .widget-title {
   color: #bbbbbb;
-  font-size: 1.5em;
+  font-size: 1.8em;
+  border-bottom: 1px dotted #888;
+  margin-bottom: .5em;
 }
 .footer .widget-container img {
   width: 85%;
@@ -1536,6 +1718,9 @@ and more scalable.
 .footer .widget-container p {
   margin: 0;
 }
+.footer .widget-container h4 {
+  font-weight: normal;
+}
 .footer .widget-container input#s {
   width: 60%;
   height: 30px;
@@ -1545,13 +1730,24 @@ and more scalable.
   border: 1px solid #2873b5;
   height: 30px;
 }
+.footer .widget-container.widget_nav_menu ul {
+  margin: 0;
+}
+.footer .widget-container.widget_nav_menu ul li a {
+  display: block;
+  padding: .4em 0;
+  border-top: 1px dotted #555;
+}
+.footer .widget-container.widget_nav_menu ul li:first-child a {
+  border-top: 0;
+}
 #bottombar {
   background-color: #222222;
   text-align: center;
 }
 #bottombar img {
   padding: 0;
-  margin: .5em .1em;
+  margin: .5em .1em .1em;
   opacity: .5;
 }
 #bottombar img:hover {
@@ -1575,51 +1771,58 @@ tweeners.
 */
 @media only screen and (min-width: 481px) {
   /******************************************************************
-Site Name: 
-Author: 
-
-Stylesheet: 481px and Up Stylesheet
-
-This stylesheet is loaded for larger devices. It's set to 
-481px because at 480px it would load on a landscaped iPhone.
-This isn't ideal because then you would be loading all those
-extra styles on that same mobile connection. 
-
-A word of warning. This size COULD be a larger mobile device,
-so you still want to keep it pretty light and simply expand
-upon your base.less styles.
-
-******************************************************************/
+  Site Name: 
+  Author: 
+  
+  Stylesheet: 481px and Up Stylesheet
+  
+  This stylesheet is loaded for larger devices. It's set to 
+  481px because at 480px it would load on a landscaped iPhone.
+  This isn't ideal because then you would be loading all those
+  extra styles on that same mobile connection. 
+  
+  A word of warning. This size COULD be a larger mobile device,
+  so you still want to keep it pretty light and simply expand
+  upon your base.less styles.
+  
+  ******************************************************************/
   /*********************
-NAVIGATION STYLES
-*********************/
+  NAVIGATION STYLES
+  *********************/
   /* .menu is clearfixed inside mixins.scss */
   .menu {
     /* end .menu ul */
+  
   }
   .menu ul {
     /* end .menu ul li */
+  
     /* highlight current page */
+  
     /* end current highlighters */
+  
   }
   .menu ul li {
     /*
-				plan your menus and drop-downs wisely.
-				*/
+  				plan your menus and drop-downs wisely.
+  				*/
+  
   }
   .menu ul li a {
     /*
-					you can use hover styles here even though this size
-					has the possibility of being a mobile device.
-					*/
+  					you can use hover styles here even though this size
+  					has the possibility of being a mobile device.
+  					*/
+  
   }
   /* end .menu */
   /*********************
-POSTS & CONTENT STYLES
-*********************/
+  POSTS & CONTENT STYLES
+  *********************/
   /* entry content */
   .entry-content {
     /* at this larger size, we can start to align images */
+  
   }
   .entry-content .alignleft,
   .entry-content img.alignleft {
@@ -1642,12 +1845,12 @@ POSTS & CONTENT STYLES
   }
   /* end .entry-content */
   /*********************
-FOOTER STYLES
-*********************/
+  FOOTER STYLES
+  *********************/
   /*
-check your menus here. do they look good?
-do they need tweaking?
-*/
+  check your menus here. do they look good?
+  do they need tweaking?
+  */
   /* end .footer-links */
 }
 /*
@@ -1658,26 +1861,26 @@ you can add resource intensive styles.
 */
 @media only screen and (min-width: 768px) {
   /******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Grid Stylesheet
-
-I've seperated the grid so you can swap it out easily. It's
-called at the top the style.less stylesheet.
-
-There are a ton of grid solutions out there. You should definitely
-experiment with your own. Here are some recommendations:
-
-http://gridsetapp.com - Love this site. Responsive Grids made easy.
-http://gridpak.com/ - Create your own responsive grid.
-
-The grid below is a combination of the 1140 grid and Twitter Boostrap. 
-I liked 1140 but Boostrap's grid was way more detailed so I merged them 
-together, let's see how this works out. If you want to use 1140, the original 
-values are commented out on each line.
-
-/******************** 1136 Grid ******************************************/
+  Site Name:
+  Author:
+  
+  Stylesheet: Grid Stylesheet
+  
+  I've seperated the grid so you can swap it out easily. It's
+  called at the top the style.less stylesheet.
+  
+  There are a ton of grid solutions out there. You should definitely
+  experiment with your own. Here are some recommendations:
+  
+  http://gridsetapp.com - Love this site. Responsive Grids made easy.
+  http://gridpak.com/ - Create your own responsive grid.
+  
+  The grid below is a combination of the 1140 grid and Twitter Boostrap. 
+  I liked 1140 but Boostrap's grid was way more detailed so I merged them 
+  together, let's see how this works out. If you want to use 1140, the original 
+  values are commented out on each line.
+  
+  /******************** 1136 Grid ******************************************/
   .onecol {
     width: 6.43%;
   }
@@ -1739,89 +1942,89 @@ values are commented out on each line.
   }
   /******************** 1131 Grid *******************************************************/
   /*
-.onecol    { width: 6.90%;  } // grid_1
-.twocol    { width: 15.12%; } // grid_2
-.threecol  { width: 23.34%; } // grid_3
-.fourcol   { width: 31.56%; } // grid_4
-.fivecol   { width: 39.79%; } // grid_5
-.sixcol    { width: 48.01%; } // grid_6
-.sevencol  { width: 56.23%; } // grid_7
-.eightcol  { width: 64.46%; } // grid_8
-.ninecol   { width: 72.68%; } // grid_9
-.tencol    { width: 80.90%; } // grid_10
-.elevencol { width: 89.12%; } // grid_11
-.twelvecol { width: 97.35%; } // grid_12
-
-// layout & column defaults
-.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol {
-  position: relative;
-  float: left;
-  margin-left: 1.33%;
-}
-
-.first {
-  margin-left: 0%;
-}
-
-.last {
-  float: right;
-}
-*/
+  .onecol    { width: 6.90%;  } // grid_1
+  .twocol    { width: 15.12%; } // grid_2
+  .threecol  { width: 23.34%; } // grid_3
+  .fourcol   { width: 31.56%; } // grid_4
+  .fivecol   { width: 39.79%; } // grid_5
+  .sixcol    { width: 48.01%; } // grid_6
+  .sevencol  { width: 56.23%; } // grid_7
+  .eightcol  { width: 64.46%; } // grid_8
+  .ninecol   { width: 72.68%; } // grid_9
+  .tencol    { width: 80.90%; } // grid_10
+  .elevencol { width: 89.12%; } // grid_11
+  .twelvecol { width: 97.35%; } // grid_12
+  
+  // layout & column defaults
+  .onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol {
+    position: relative;
+    float: left;
+    margin-left: 1.33%;
+  }
+  
+  .first {
+    margin-left: 0%;
+  }
+  
+  .last {
+    float: right;
+  }
+  */
   /******************** 1132 Grid *******************************************************/
   /*
-.onecol    { width: 8.04%;  } // grid_1
-.twocol    { width: 16.08%; } // grid_2
-.threecol  { width: 24.12%; } // grid_3
-.fourcol   { width: 32.16%; } // grid_4
-.fivecol   { width: 39.79%; } // grid_5
-.sixcol    { width: 48.01%; } // grid_6
-.sevencol  { width: 56.23%; } // grid_7
-.eightcol  { width: 64.46%; } // grid_8
-.ninecol   { width: 72.68%; } // grid_9
-.tencol    { width: 80.90%; } // grid_10
-.elevencol { width: 89.12%; } // grid_11
-.twelvecol { width: 97.35%; } // grid_12
-
-// layout & column defaults
-.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol {
-  position: relative;
-  float: left;
-}
-
-.first {
-  margin-left: 1.77%;
-}
-
-.last {
-  float: right;
-  margin-right: 1.77%
-}
-*/
+  .onecol    { width: 8.04%;  } // grid_1
+  .twocol    { width: 16.08%; } // grid_2
+  .threecol  { width: 24.12%; } // grid_3
+  .fourcol   { width: 32.16%; } // grid_4
+  .fivecol   { width: 39.79%; } // grid_5
+  .sixcol    { width: 48.01%; } // grid_6
+  .sevencol  { width: 56.23%; } // grid_7
+  .eightcol  { width: 64.46%; } // grid_8
+  .ninecol   { width: 72.68%; } // grid_9
+  .tencol    { width: 80.90%; } // grid_10
+  .elevencol { width: 89.12%; } // grid_11
+  .twelvecol { width: 97.35%; } // grid_12
+  
+  // layout & column defaults
+  .onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol {
+    position: relative;
+    float: left;
+  }
+  
+  .first {
+    margin-left: 1.77%;
+  }
+  
+  .last {
+    float: right;
+    margin-right: 1.77%
+  }
+  */
   /******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Tablet & Small Desktop Stylesheet
-
-Here's where you can start getting into the good stuff.
-This size will work on iPads, other tablets, and desktops.
-So you can start working with more styles, background images,
-and other resources. You'll also notice the grid starts to
-come into play. Have fun!
-
-******************************************************************/
+  Site Name:
+  Author:
+  
+  Stylesheet: Tablet & Small Desktop Stylesheet
+  
+  Here's where you can start getting into the good stuff.
+  This size will work on iPads, other tablets, and desktops.
+  So you can start working with more styles, background images,
+  and other resources. You'll also notice the grid starts to
+  come into play. Have fun!
+  
+  ******************************************************************/
   /*********************
-GENERAL STYLES
-*********************/
+  GENERAL STYLES
+  *********************/
   /*********************
-LAYOUT & GRID STYLES
-*********************/
+  LAYOUT & GRID STYLES
+  *********************/
   .wrap {
     max-width: 1140px;
   }
   /*********************
-HEADER SYTLES
-*********************/
+  HEADER SYTLES
+  *********************/
   .header #topbar #contact ul li {
     float: left;
     padding-right: 1em;
@@ -1830,8 +2033,8 @@ HEADER SYTLES
     float: right;
   }
   /*********************
-NAVIGATION STYLES
-*********************/
+  NAVIGATION STYLES
+  *********************/
   #megaMenu #megaUber {
     text-align: center;
   }
@@ -1842,23 +2045,29 @@ NAVIGATION STYLES
     background: #eee;
     border: 0;
     /* end .menu ul li */
+  
     /* highlight current page */
+  
     /* end current highlighters */
+  
   }
   .nav li {
     float: left;
     position: relative;
     /*
-		plan your menus and drop-downs wisely.
-		*/
+  		plan your menus and drop-downs wisely.
+  		*/
+  
     /* showing sub-menus */
+  
   }
   .nav li a {
     border-bottom: 0;
     /*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/
+  			you can use hover styles here even though this size
+  			has the possibility of being a mobile device.
+  			*/
+  
   }
   .nav li a:hover,
   .nav li a:focus {
@@ -1873,14 +2082,16 @@ NAVIGATION STYLES
     display: none;
     z-index: 8999;
     /* highlight sub-menu current page */
+  
   }
   .nav li ul.sub-menu li,
   .nav li ul.children li {
     /*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/
+  				if you need to go deeper, go nuts
+  				just remember deeper menus suck
+  				for usability. k, bai.
+  				*/
+  
   }
   .nav li ul.sub-menu li a,
   .nav li ul.children li a {
@@ -1900,8 +2111,8 @@ NAVIGATION STYLES
   }
   /* end .nav */
   /*********************
-CONTENT STYLES
-*********************/
+  CONTENT STYLES
+  *********************/
   .page-template-page-staff-list-php #trainer-list .trainer .photo {
     width: 28%;
     display: inline-block;
@@ -1938,8 +2149,8 @@ CONTENT STYLES
     list-style-position: inside;
   }
   /*********************
-SIDEBARS & ASIDES
-*********************/
+  SIDEBARS & ASIDES
+  *********************/
   .sidebar {
     margin-top: 2.2em;
   }
@@ -1954,6 +2165,7 @@ SIDEBARS & ASIDES
   .widget ul li {
     margin-bottom: 0.75em;
     /* deep nesting */
+  
   }
   .widget ul li ul {
     margin-top: 0.75em;
@@ -1971,19 +2183,20 @@ SIDEBARS & ASIDES
   /* search widget */
   /* text widget */
   /*********************
-FOOTER STYLES
-*********************/
+  FOOTER STYLES
+  *********************/
   /*
-you'll probably need to do quite a bit
-of overriding here if you styled them for
-mobile. Make sure to double check these!
-*/
+  you'll probably need to do quite a bit
+  of overriding here if you styled them for
+  mobile. Make sure to double check these!
+  */
   .footer-links ul li {
     /*
-			be careful with the depth of your menus.
-			it's very rare to have multi-depth menus in
-			the footer.
-			*/
+  			be careful with the depth of your menus.
+  			it's very rare to have multi-depth menus in
+  			the footer.
+  			*/
+  
   }
   /* end .footer-links */
 }
@@ -1995,15 +2208,15 @@ you can add resource intensive styles.
 */
 @media only screen and (min-width: 1030px) {
   /******************************************************************
-Site Name: 
-Author: 
-
-Stylesheet: Desktop Stylsheet
-
-This is the desktop size. It's larger than an iPad so it will only
-be seen on the Desktop. 
-
-******************************************************************/
+  Site Name: 
+  Author: 
+  
+  Stylesheet: Desktop Stylsheet
+  
+  This is the desktop size. It's larger than an iPad so it will only
+  be seen on the Desktop. 
+  
+  ******************************************************************/
 }
 /*
 LARGE VIEWING SIZE
@@ -2011,15 +2224,15 @@ This is for the larger monitors and possibly full screen viewers.
 */
 @media only screen and (min-width: 1240px) {
   /******************************************************************
-Site Name: 
-Author: 
-
-Stylesheet: Super Large Monitor Stylesheet
-
-You can add some advanced styles here if you like. This kicks in
-on larger screens.
-
-******************************************************************/
+  Site Name: 
+  Author: 
+  
+  Stylesheet: Super Large Monitor Stylesheet
+  
+  You can add some advanced styles here if you like. This kicks in
+  on larger screens.
+  
+  ******************************************************************/
 }
 /*
 RETINA (2x RESOLUTION DEVICES)
@@ -2029,50 +2242,53 @@ query for retina AND a certain size if you want. Go Nuts.
 */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
   /******************************************************************
-Site Name: 
-Author: 
-
-Stylesheet: Retina Screens & Devices Stylesheet
-
-When handling retina screens you need to make adjustments, especially
-if you're not using font icons. Here you can add them in one neat
-place.
-
-******************************************************************/
+  Site Name: 
+  Author: 
+  
+  Stylesheet: Retina Screens & Devices Stylesheet
+  
+  When handling retina screens you need to make adjustments, especially
+  if you're not using font icons. Here you can add them in one neat
+  place.
+  
+  ******************************************************************/
   /* 
-
-EXAMPLE 
-Let's say you have an image and you need to make sure it looks ok
-on retina screens. Let's say we have an icon which dimension are
-24px x 24px. In your regular stylesheets, it would look something
-like this:
-
-.icon {
-	width: 24px;
-	height: 24px;
-	background: url(img/test.png) no-repeat;
-}
-
-For retina screens, we have to make some adjustments, so that image
-doesn't look blurry. So, taking into account the image above and the
-dimensions, this is what we would put in our retina stylesheet:
-
-.icon {
-	background: url(img/test@2x.png) no-repeat;
-	background-size: 24px 24px;
-}
-
-So, you would create the same icon, but at double the resolution, meaning 
-it would be 48px x 48px. You'd name it the same, but with a @2x at the end
-(this is pretty standard practice). Set the background image so it matches
-the original dimensions and you are good to go. 
-
-*/
+  
+  EXAMPLE 
+  Let's say you have an image and you need to make sure it looks ok
+  on retina screens. Let's say we have an icon which dimension are
+  24px x 24px. In your regular stylesheets, it would look something
+  like this:
+  
+  .icon {
+  	width: 24px;
+  	height: 24px;
+  	background: url(img/test.png) no-repeat;
+  }
+  
+  For retina screens, we have to make some adjustments, so that image
+  doesn't look blurry. So, taking into account the image above and the
+  dimensions, this is what we would put in our retina stylesheet:
+  
+  .icon {
+  	background: url(img/test@2x.png) no-repeat;
+  	background-size: 24px 24px;
+  }
+  
+  So, you would create the same icon, but at double the resolution, meaning 
+  it would be 48px x 48px. You'd name it the same, but with a @2x at the end
+  (this is pretty standard practice). Set the background image so it matches
+  the original dimensions and you are good to go. 
+  
+  */
 }
 /*
 iPHONE 5 MEDIA QUERY
 Want to get fancy for no good reason? Knock yourself out.
 */
+@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  
+}
 /*
 PRINT STYLESHEET
 Feel free to customize this. Remember to add things that won't make
@@ -2081,16 +2297,16 @@ be set to display none.
 */
 @media print {
   /******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Print Stylesheet
-
-This is the print stylesheet. There's probably not a lot
-of reasons to edit this stylesheet. If you want to
-though, go for it.
-
-******************************************************************/
+  Site Name:
+  Author:
+  
+  Stylesheet: Print Stylesheet
+  
+  This is the print stylesheet. There's probably not a lot
+  of reasons to edit this stylesheet. If you want to
+  though, go for it.
+  
+  ******************************************************************/
   * {
     background: transparent !important;
     color: black !important;
@@ -2131,7 +2347,7 @@ though, go for it.
   img {
     max-width: 100% !important;
   }
-  @page {
+  @page  {
     margin: 0.5cm;
   }
   p,
