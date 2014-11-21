@@ -1,4 +1,4 @@
-	<footer class="footer top-margin" role="contentinfo">
+	<footer class="footer" role="contentinfo">
 		<div id="inner-footer" class="wrap clearfix">
 			<div class="fourcol">
 				<? dynamic_sidebar('first-footer-widget-area'); ?>

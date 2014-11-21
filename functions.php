@@ -44,7 +44,7 @@ require_once('library/bones.php'); // if you remove this, bones will break
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'bones-thumb-600', 600, 300, true );
+add_image_size( 'bones-thumb-600', 700, 460, true );
 add_image_size( 'bones-thumb-300', 300, 200, true );
 
 
@@ -52,15 +52,7 @@ add_image_size( 'bones-thumb-300', 300, 200, true );
 
 // Sidebars & Widgetizes Areas
 function bones_register_sidebars() {
-		register_sidebar(array(
-		'name' => __('Home Page - Side Widget Area', 'bonestheme'),
-		'id' => 'home-side-widget-area',
-		'description' => __('The primary widget area', 'bonestheme'),
-		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	));
+	
 	register_sidebar(array(
 		'name' => __('Interior Page - Side Widget Area', 'bonestheme'),
 		'id' => 'interior-side-widget-area',

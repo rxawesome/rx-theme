@@ -39,9 +39,12 @@
 							printf(__( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&</span> filed under %4$s.', 'bonestheme' ), get_the_time('Y-m-j'), get_the_time(__( 'F jS, Y', 'bonestheme' )), bones_get_the_author_posts_link(), get_the_category_list(', '));
 						?></p>
 					</header> <!-- end article header -->
+					
+					<section class="entry-featured clearfix">
+						<? the_post_thumbnail('bones-thumb-600'); ?>
+					</section>
 
 					<section class="entry-content clearfix">
-						<? the_post_thumbnail( 'full' ); ?>
 						<? the_excerpt(); ?>
 					</section> <!-- end article section -->
 
