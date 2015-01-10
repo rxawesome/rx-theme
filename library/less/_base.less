@@ -54,17 +54,7 @@ body {
 		height: auto;
 	}
 }
-.rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
-.home {}                          /* home page */
-.blog {}                          /* blog template page */
 
-.date {}                          /* date archive page */
-	.date-paged-1 {}                /* replace the number to the corresponding page number */
-.search {}                        /* search page */
-	.search-results {}              /* search result page */
-	.search-no-results {}           /* no results search page */
-	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
-.error404 {}                      /* 404 page */
 .single {
 	.featured {
 		img {
@@ -72,30 +62,8 @@ body {
 			height: auto;
 		}
 	}
-}                        /* single post page */
-	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
-	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
-.attachment {}                    /* attatchment page */
-	.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
-	.attachment-mime-type {}        /* style mime type pages */
-.author {}                        /* author page */
-	.author-nicename {}             /* user nicename (i.e. body.author-samueladams) */
-	.author-paged-1 {}              /* paged author archives (i.e. body.author-paged-4) for page 4 */
-.category {}                      /* category page */
-	.category-1 {}                  /* individual category page (i.e. body.category-6) */
-	.category-paged-1 {}            /* replace the number to the corresponding page number */
-.tag {}                           /* tag page */
-	.tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
-	.tag-paged-1 {}                 /* replace the number to the corresponding page number */
-.page-template {}                 /* custom page template page */
-	.page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
-	.page-paged-1 {}                /* replace the number to the corresponding page number */
-	.page-parent {}                 /* parent page template */
-	.page-child {}                  /* child page template */
-	.parent-pageid-1 {}             /* replace the number to the corresponding page number */
-.logged-in {}                     /* if user is logged in */
-.paged {}                         /* paged items like search results or archives */
-	.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
+}
+
 
 /*********************
 03. LAYOUT & GRID STYLES
@@ -105,7 +73,6 @@ body {
 	width: 96%;
 	margin: 0 auto;
 }
-#container {}
 
 /*********************
 04. LINK STYLES
@@ -172,9 +139,11 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 
 		#contact {
 			margin: 0px;
+
 			ul {
 				margin: 0px;
 				text-align: center;
+
 				li {
 					display: inline-block;
 					padding-left: 24px;
@@ -192,22 +161,29 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 		}
 
 		#social {
+			text-align: center;
+
 			.socialstickers {
 				margin: 0;
+
 				.like_button {
 					padding-left: 8px;
 					display: inline-block;
 					vertical-align: top;
 					margin-top: 3px;
 					width: 140px;
+
+					iframe { width: 140px; }
 				}
 			}
+
 			.icon {
 				display: inline-block;
 			}
-			text-align: center;
+
 			.icons {
 				margin-top: 0.45em;
+
 				a {
 					img {
 						margin: 0.2em 0;
@@ -226,16 +202,19 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 	}
 
 	nav {
-		background-color: @black;
+		background: @black;
+
 		#megaMenu {
 			#megaMenuToggle {
 				color: @white;
 				font-size: 1.5em;
 				.title-font;
+
 				&:hover {
 					color: @theme-color;
 				}
 			}
+
 			#megaUber {
 				li {
 					a {
@@ -252,20 +231,24 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 							font-size: 1.8em;
 						}
 					}
+
 					.sub-menu {
 						background: black;
 						border: none;
 						box-shadow: none;
 						left: inherit !important;
 						border-radius: 0px;
+
 						li {
 							margin: 0px;
 							padding: 0px;
 							float: none;
 							display: block;
+
 							a {
 								border: none;
 								margin: 0;
+
 								span {
 									font-size: 1.4em;
 								}
@@ -274,19 +257,12 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 					}
 
 					&:first-child {}
-
-					&:last-child {
-					}
+					&:last-child {}
 				}
 			}
 		}
 	}
 }
-
-/*********************
-07. NAVIGATION STYLES
-*********************/
-
 
 
 /*********************
@@ -416,19 +392,12 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 	}
 
 		/* want to style individual post classes? Booya! */
-		.post-id {}         /* post by id (i.e. post-3) */
-		.post {}            /* general post style */
-		.page {}            /* general article on a page style */
-		.attachment {}      /* general style on an attatchment */
-		.sticky {}          /* sticky post style */
-		.hentry {}          /* hentry class */
 		.category-blog {
 			.wp-post-image {
 				width: 100%;
 				height: auto;
 			}
-		}   /* style by category (i.e. category-videos) */
-		.tag-slug {}        /* style by tag (i.e. tag-news) */
+		} 
 
 		/* post meta */
 		.tags,
@@ -446,28 +415,6 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 
 		/* entry content */
 		.entry-content {
-			p {}
-			ul, ol, table, dl {}
-
-			ul, ol {
-				li {}
-			}
-
-			ul {
-				li {}
-			}
-
-			ol {
-				li {}
-			}
-
-			blockquote {
-				&:before {}
-			}
-
-			dl {}
-			dt {}
-
 			dd {
 				margin-left: 0;
 				font-size: 0.9em;
@@ -480,16 +427,6 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 				max-width: 100%;
 				height: auto;
 			}
-
-			/*
-			image alignment on a screen this size may be
-			a bit difficult. It's set to start aligning
-			and floating images at the next breakpoint,
-			but it's up to you. Feel free to change it up.
-			*/
-			.alignleft, img.alignleft {}
-			.alignright, img.alignright {}
-			.aligncenter, img.aligncenter {}
 
 			video, object {
 				max-width: 100%;
@@ -521,24 +458,7 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 			}
 		} /* end .wp-caption */
 
-		/* image gallery styles */
-		.gallery {
-			dl {
-				a {}
-				img {}
-			}
 
-			dt {}
-			dd {}
-		} /* end .gallery */
-
-		/* gallery caption styles */
-		.gallery-caption {}
-
-		.size-full {}
-		.size-large {}
-		.size-medium {}
-		.size-thumbnail {}
 
 /******************************************************************
 09. PAGE NAVI STYLES
@@ -569,13 +489,6 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 			padding: 3px 6px;
 			border-bottom: 2px solid @theme-color;
 			position: relative;
-
-			a {
-				/* hovering on current page link */
-				&:hover,
-				&:focus {}
-			}
-
 		} /* end .bones_page_navi .bpn-current */
 
 		/* common styles for page-navi links */
@@ -594,38 +507,6 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 		li.bpn-first-page-link a:hover,
 		li.bpn-last-page-link a:hover {
 			background: none;
-		}
-
-		/* previous link */
-		li.bpn-prev-link {
-			a {
-				&:hover,
-				&:focus {}
-			}
-		}
-
-		/* next page link */
-		li.bpn-next-link {
-			a {
-				&:hover,
-				&:focus {}
-			}
-		}
-
-		/* first page link */
-		li.bpn-first-page-link {
-			a {
-				&:hover,
-				&:focus {}
-			}
-		}
-
-		/* last page link */
-		li.bpn-last-page-link {
-			a {
-				&:hover,
-				&:focus {}
-			}
 		}
 	} /* end .bones_page_navi */
 
@@ -680,20 +561,7 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 
 		ul.children {
 			margin: 0;
-
-			li {}
-
-			/* variations */
-			.comment {}
-			.alt {}
-			.odd {}
-			.even {}
-			.depth-1 {}           /* change number for different depth */
-			.byuser {}
-			.bypostauthor {}
-			.comment-author-admin {}
-
-		} /* end .commentlist li ul.children */
+		}
 	}
 
 	li[class*=depth-] {
@@ -712,25 +580,9 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 		padding-bottom: 0;
 	}
 
-	li.depth-2 {}
-	li.depth-3 {}
-	li.depth-4 {}
-	li.depth-5 {}
-
 	/* general comment classes */
-	.alt {}
 	.odd { background: @light-gray; }
 	.even { background: @white; }
-	.parent {}
-	.comment {}
-	.children {}
-	.pingback {}
-	.bypostauthor {}
-	.comment-author {}
-	.comment-author-admin {}
-	.thread-alt {}
-	.thread-odd {}
-	.thread-even {}
 
 	/* vcard */
 	.vcard {
@@ -868,20 +720,6 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 	}
 }
 
-	/* comment submit button */
-	#submit {}
-
-	/* comment form title */
-	#comment-form-title { }
-
-	/* cancel comment reply link */
-	#cancel-comment-reply {
-		a {}
-	}
-
-	/* logged in comments */
-	.comments-logged-in-as {}
-
 	/* allowed tags */
 	#allowed_tags {
 		margin: 1.5em 10px 0.7335em 0;
@@ -950,7 +788,12 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 			
 			a.post-title {
 				font-size: 1em;
+				text-decoration: none;
 			}
+		}
+		
+		&.widget_subpages {
+			a { text-decoration: none; }
 		}
 		
 		&.widget_FacebookLikeBox {
@@ -1062,6 +905,7 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 		}
 	}
 }
+
 #bottombar {
 	background-color: @black;
 	text-align: center;

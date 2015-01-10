@@ -107,9 +107,9 @@ TYPOGRAPHY
     font-style: normal;
 }
 
-@sans-serif:         'Trebuchet MS', helvetica, sans-serif; 
-@serif:              "Georgia", Cambria, Times New Roman, Times, serif; 
-@title-font: 	"akzidenzmd", @sans-serif;
+@sans-serif:	"Trebuchet MS", helvetica, sans-serif; 
+@serif:			"Georgia", Cambria, Times New Roman, Times, serif; 
+@title-font:	"akzidenzmd", @sans-serif;
 
 .title-font {
 	font-family: @title-font;
@@ -259,14 +259,10 @@ BUTTONS
 
 	&:hover, &:focus {
 		color: @white;
-	  border: 1px solid darken(@bones-pink, 13%);
-	  border-top-color: darken(@bones-pink, 20%);
+		border: 1px solid darken(@bones-pink, 13%);
+		border-top-color: darken(@bones-pink, 20%);
 	 	border-left-color: darken(@bones-pink, 20%);
 		.css-gradient(darken(@bones-pink, 5%),darken(@bones-pink, 10%));
-	}
-
-	&:active {
-		.css-gradient(darken(@bones-pink, 5%),@bones-pink);
 	}
 
 	span {
