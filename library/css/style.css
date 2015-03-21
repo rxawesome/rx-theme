@@ -535,6 +535,13 @@ TOOLS
   white-space: nowrap;
   overflow: hidden;
 }
+.image-box {
+  line-height: 0;
+}
+.image-box img {
+  width: 100%;
+  height: auto;
+}
 /*********************
 COLORS
 Need help w/ choosing your colors? Try this site out:
@@ -570,7 +577,7 @@ TYPOGRAPHY
   font-style: normal;
 }
 .title-font {
-  font-family: "akzidenzmd", 'Trebuchet MS', helvetica, sans-serif;
+  font-family: "akzidenzmd", "Trebuchet MS", helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 100;
@@ -705,14 +712,11 @@ BUTTONS
   background-image: -o-linear-gradient(top, #e40f42, #cc0e3b);
   background-image: linear-gradient(to bottom, #e40f42, #cc0e3b);
 }
-.button:active,
-.button:visited:active {
-  background-color: #f01d4f;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e40f42), to(#f01d4f));
-  background-image: -webkit-linear-gradient(top, #e40f42, #f01d4f);
-  background-image: -moz-linear-gradient(top, #e40f42, #f01d4f);
-  background-image: -o-linear-gradient(top, #e40f42, #f01d4f);
-  background-image: linear-gradient(to bottom, #e40f42, #f01d4f);
+.button span,
+.button:visited span {
+  font-family: "Georgia";
+  font-weight: bold;
+  line-height: 1.1em;
 }
 .blue-button,
 .blue-button:visited {
@@ -758,67 +762,13 @@ BUTTONS
 /*********************
 Theme Colors
 *********************/
-/*********************
-Font Usage
-*********************/
-/*********************
-Base Styles
-*********************/
-.promotion .story {
-  position: relative;
-  width: 100%;
-  height: 180px;
-  overflow: hidden;
-  background: black;
-}
-.promotion .story .photo {
-  display: block;
-}
-.promotion .story .photo img {
-  width: 100%;
-  height: auto;
-}
-.promotion .story .title {
-  display: block;
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-}
-.promotion .story .go {
-  position: absolute;
-  top: -11px;
-  right: -31px;
-  background: #2873b5;
-  width: 80px;
-  transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-}
-.promotion .story .go p {
-  color: black;
-  margin: 0px;
-  text-align: center;
-  margin-top: 20px;
-  font-size: 1.1em;
-}
-.promotion .story .go p .arrow {
-  color: white;
-  font-size: .7em;
-  position: relative;
-  top: -1px;
-}
-.promotion .info {
-  padding: 15px 1em;
-  width: 100%;
-  background: #ebebeb;
-}
 .button,
 .button:visited {
   background-color: #2873b5;
   border-color: #2873b5;
   background-image: none;
   border-radius: 0px;
-  font-family: "akzidenzmd", 'Trebuchet MS', helvetica, sans-serif;
+  font-family: "akzidenzmd", "Trebuchet MS", helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 100;
@@ -831,6 +781,12 @@ Base Styles
   background-image: none;
   border-color: #222222;
 }
+/*********************
+Font Usage
+*********************/
+/*********************
+Base Styles
+*********************/
 /*********************
 Larger Mobile Device
 *********************/
@@ -886,7 +842,7 @@ body {
 
 }
 body {
-  font-family: 'Trebuchet MS', helvetica, sans-serif;
+  font-family: "Trebuchet MS", helvetica, sans-serif;
   font-size: 100%;
   line-height: 1.4;
   color: #222222;
@@ -899,44 +855,10 @@ body {
   width: 100%;
   height: auto;
 }
-/* for sites that are read right to left (i.e. hebrew) */
-/* home page */
-/* blog template page */
-/* date archive page */
-/* replace the number to the corresponding page number */
-/* search page */
-/* search result page */
-/* no results search page */
-/* individual paged search (i.e. body.search-paged-3) */
-/* 404 page */
 .single .featured img {
   width: 100%;
   height: auto;
 }
-/* single post page */
-/* individual post page by id (i.e. body.postid-73) */
-/* individual paged single (i.e. body.single-paged-3) */
-/* attatchment page */
-/* individual attatchment page (i.e. body.attachmentid-763) */
-/* style mime type pages */
-/* author page */
-/* user nicename (i.e. body.author-samueladams) */
-/* paged author archives (i.e. body.author-paged-4) for page 4 */
-/* category page */
-/* individual category page (i.e. body.category-6) */
-/* replace the number to the corresponding page number */
-/* tag page */
-/* individual tag page (i.e. body.tag-news) */
-/* replace the number to the corresponding page number */
-/* custom page template page */
-/* individual page template (i.e. body.page-template-contact-php */
-/* replace the number to the corresponding page number */
-/* parent page template */
-/* child page template */
-/* replace the number to the corresponding page number */
-/* if user is logged in */
-/* paged items like search results or archives */
-/* individual paged (i.e. body.paged-3) */
 /*********************
 03. LAYOUT & GRID STYLES
 *********************/
@@ -950,7 +872,6 @@ body {
 a,
 a:visited {
   color: #2873b5;
-  text-decoration: none;
   /* on hover */
 
   /* on click */
@@ -992,7 +913,7 @@ h5,
 #searchsubmit,
 .go {
   text-rendering: optimizelegibility;
-  font-family: "akzidenzmd", 'Trebuchet MS', helvetica, sans-serif;
+  font-family: "akzidenzmd", "Trebuchet MS", helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 100;
@@ -1048,6 +969,7 @@ h3.widget-title {
 }
 h3.widget-title a {
   color: #222222;
+  text-decoration: none;
 }
 h3.comments-title,
 h3.reply-title {
@@ -1060,7 +982,10 @@ h3.reply-title {
 06. HEADER SYTLES
 *********************/
 .header #topbar {
-  background-color: #222222;
+  background: #222222;
+}
+.header #topbar a {
+  text-decoration: none;
 }
 .header #topbar #contact {
   margin: 0px;
@@ -1093,9 +1018,13 @@ h3.reply-title {
   margin: 0;
 }
 .header #topbar #social .socialstickers .like_button {
+  padding-left: 8px;
   display: inline-block;
   vertical-align: top;
   margin-top: 3px;
+  width: 140px;
+}
+.header #topbar #social .socialstickers .like_button iframe {
   width: 140px;
 }
 .header #topbar #social .icon {
@@ -1110,14 +1039,15 @@ h3.reply-title {
 .header #logo img {
   display: block;
   margin: 2em auto;
+  max-width: 100%;
 }
 .header nav {
-  background-color: #222222;
+  background: #222222;
 }
 .header nav #megaMenu #megaMenuToggle {
   color: #ffffff;
   font-size: 1.5em;
-  font-family: "akzidenzmd", 'Trebuchet MS', helvetica, sans-serif;
+  font-family: "akzidenzmd", "Trebuchet MS", helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 100;
@@ -1130,7 +1060,7 @@ h3.reply-title {
 .header nav #megaMenu #megaUber li a {
   color: #ffffff;
   padding: 0.5em 1em;
-  font-family: "akzidenzmd", 'Trebuchet MS', helvetica, sans-serif;
+  font-family: "akzidenzmd", "Trebuchet MS", helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 100;
@@ -1147,7 +1077,7 @@ h3.reply-title {
   font-size: 1.8em;
 }
 .header nav #megaMenu #megaUber li .sub-menu {
-  background: black;
+  background: #222222;
   border: none;
   box-shadow: none;
   left: inherit !important;
@@ -1167,13 +1097,10 @@ h3.reply-title {
   font-size: 1.4em;
 }
 /*********************
-07. NAVIGATION STYLES
-*********************/
-/*********************
 08. POSTS & CONTENT STYLES
 *********************/
 #content {
-  margin-top: 2.2em;
+  padding-top: 2.2em;
   padding-bottom: 2em;
 }
 #content ol {
@@ -1206,7 +1133,42 @@ h3.reply-title {
 #content ul li ol li,
 #content ol li ul li,
 #content ul li ul li {
-  padding-left: 25px;
+  padding-left: 35px;
+}
+.page-template-page-staff-popup-php #staff-list .staff-member .photo {
+  line-height: 0;
+}
+.page-template-page-staff-popup-php #staff-list .staff-member .photo img {
+  width: 100%;
+  height: auto;
+}
+.page-template-page-staff-popup-php #staff-list .staff-member.preview {
+  margin-bottom: 15px;
+}
+.page-template-page-staff-popup-php #staff-list .staff-member.preview .photo {
+  position: relative;
+}
+.page-template-page-staff-popup-php #staff-list .staff-member.preview .photo h2 {
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  line-height: 1em;
+  padding: 10px 15px;
+  display: block;
+}
+.page-children {
+  padding-top: 1em;
+  border-top: 1px solid #bbbbbb;
+}
+.page-children .entry-feature .Photo {
+  line-height: 0px;
+}
+.page-children .entry-preview .article-footer .More,
+.page-children .entry-preview .article-footer .button {
+  margin: 0;
 }
 .trainer {
   border-bottom: 1px solid #DDDDDD;
@@ -1241,18 +1203,22 @@ h3.reply-title {
   list-style-position: inside;
 }
 .qa-faqs .qa-faq {
-  border: 1px solid #bbbbbb;
+  border: 1px solid darkey(#bbbbbb, 10%);
   padding: 0 1em;
   margin-bottom: .5em;
-  background: #EEE;
+  background: #bbbbbb;
 }
 .qa-faqs .qa-faq .qa-faq-title {
-  font-size: 1em;
-  margin: .5em 0;
+  font-size: 1.1em;
+  margin: .7em 0 .5em 0;
 }
 .qa-faqs .qa-faq .qa-faq-title a {
   color: #222222;
   font-size: 1.2em;
+  text-decoration: none;
+}
+.qa-faqs .qa-faq .qa-faq-answer {
+  border-top: 1px solid #848484;
 }
 .loop {
   /* end .hentry */
@@ -1267,21 +1233,25 @@ h3.reply-title {
   border-top: 0;
 }
 .gform_wrapper ul.gform_fields {
-  padding: 0;
+  padding: 0 !important;
+}
+.gform_wrapper ul.gform_fields input[type=text],
+.gform_wrapper ul.gform_fields input[type=password],
+.gform_wrapper ul.gform_fields input[type=number],
+.gform_wrapper ul.gform_fields input[type=tel],
+.gform_wrapper ul.gform_fields input[type=url],
+.gform_wrapper ul.gform_fields input[type=email],
+.gform_wrapper ul.gform_fields textarea,
+.gform_wrapper ul.gform_fields select {
+  border: 1px solid #DDD;
+  background: #FCFCFC;
+  padding: 8px;
 }
 /* want to style individual post classes? Booya! */
-/* post by id (i.e. post-3) */
-/* general post style */
-/* general article on a page style */
-/* general style on an attatchment */
-/* sticky post style */
-/* hentry class */
 .category-blog .wp-post-image {
   width: 100%;
   height: auto;
 }
-/* style by category (i.e. category-videos) */
-/* style by tag (i.e. tag-news) */
 /* post meta */
 .tags,
 .byline,
@@ -1290,16 +1260,11 @@ h3.reply-title {
   font-size: .9em;
   color: #999;
 }
-/* entry content */
-.entry-content {
-  /*
-			image alignment on a screen this size may be
-			a bit difficult. It's set to start aligning
-			and floating images at the next breakpoint,
-			but it's up to you. Feel free to change it up.
-			*/
-
+.entry-featured {
+  margin-top: .5em;
+  line-height: 0;
 }
+/* entry content */
 .entry-content dd {
   margin-left: 0;
   font-size: 0.9em;
@@ -1339,81 +1304,39 @@ h3.reply-title {
   text-align: center;
 }
 /* end .wp-caption */
-/* image gallery styles */
-/* end .gallery */
-/* gallery caption styles */
 /******************************************************************
 09. PAGE NAVI STYLES
 ******************************************************************/
-.page-navigation,
-.wp-prev-next {
-  margin: 1.1em 0 2.2em;
+.page-navigation {
+  padding-top: 2em;
+  border-top: 1px solid #bbbbbb;
 }
-.bones_page_navi {
+.page-navigation .bones_page_navi {
+  margin: 1em 0;
+  padding: 0 !important;
   list-style-type: none !important;
-  /* current page link */
-
-  /* end .bones_page_navi .bpn-current */
-
-  /* common styles for page-navi links */
-
-  /* remove the bg on end links */
-
-  /* previous link */
-
-  /* next page link */
-
-  /* first page link */
-
-  /* last page link */
-
 }
-.bones_page_navi li {
+.page-navigation .bones_page_navi li {
   float: left;
-  margin-left: 10px;
+  margin: 0px 2px !important;
 }
-.bones_page_navi li:hover,
-.bones_page_navi li:focus {
-  border-bottom: 2px solid #2873b5;
-}
-.bones_page_navi li a {
-  padding: 3px 6px;
+.page-navigation .bones_page_navi li a {
+  padding: 5px 10px;
   display: block;
   text-decoration: none;
   position: relative;
+  text-transform: uppercase;
+  background: #7bb2e2;
+  color: #ffffff;
 }
-.bones_page_navi li.bpn-current {
-  padding: 3px 6px;
-  border-bottom: 2px solid #2873b5;
-  position: relative;
+.page-navigation .bones_page_navi li:hover a,
+.page-navigation .bones_page_navi li.bpn-current a {
+  color: #ffffff;
+  background: #2873b5;
 }
-.bones_page_navi li.bpn-current a {
-  /* hovering on current page link */
-
+.page-navigation .bones_page_navi li:first-child {
+  margin-left: 0;
 }
-.bones_page_navi li.bpn-prev-link,
-.bones_page_navi li.bpn-next-link {
-  font-weight: 700;
-}
-.bones_page_navi li.bpn-prev-link a,
-.bones_page_navi li.bpn-next-link a {
-  padding: 0;
-}
-.bones_page_navi li.bpn-prev-link a:hover,
-.bones_page_navi li.bpn-next-link a:hover,
-.bones_page_navi li.bpn-first-page-link a:hover,
-.bones_page_navi li.bpn-last-page-link a:hover {
-  background: none;
-}
-/* end .bones_page_navi */
-/* fallback previous & next links */
-.wp-prev-next .prev-link {
-  float: left;
-}
-.wp-prev-next .next-link {
-  float: right;
-}
-/* end .wp-prev-next */
 /******************************************************************
 10. COMMENT STYLES
 ******************************************************************/
@@ -1421,6 +1344,19 @@ h3.reply-title {
 #comments {
   /* number of comments span */
 
+}
+.comment-nav ul {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style-type: none;
+}
+.comment-nav ul li {
+  display: inline-block;
+  width: 50%;
+}
+.comment-nav ul li:last-child {
+  float: right;
+  text-align: right;
 }
 .commentlist {
   /* general comment classes */
@@ -1447,18 +1383,12 @@ h3.reply-title {
   list-style-type: none;
   margin-bottom: 1.5em;
   padding: 0.7335em 10px;
-  /* end .commentlist li ul.children */
-
 }
 .commentlist li:last-child {
   margin-bottom: 0;
 }
 .commentlist li ul.children {
   margin: 0;
-  /* variations */
-
-  /* change number for different depth */
-
 }
 .commentlist li[class*=depth-] {
   margin-top: 1.1em;
@@ -1474,10 +1404,10 @@ h3.reply-title {
   padding-bottom: 0;
 }
 .commentlist .odd {
-  background: #eee;
+  background: #bbbbbb;
 }
 .commentlist .even {
-  background: #fefefe;
+  background: #ffffff;
 }
 .commentlist .vcard {
   margin-left: 50px;
@@ -1514,9 +1444,9 @@ h3.reply-title {
 .commentlist .comment-reply-link {
   text-decoration: none;
   float: right;
-  background: #4598bb;
+  background: #2873b5;
   padding: 3px 5px;
-  color: #fff;
+  color: #ffffff;
   opacity: 0.65;
   margin-bottom: 10px;
   font-weight: 700;
@@ -1586,13 +1516,6 @@ h3.reply-title {
   width: 97.3%;
   height: 150px;
 }
-/* comment submit button */
-/* comment form title */
-#comment-form-title {
-  margin: 0 0 1.1em;
-}
-/* cancel comment reply link */
-/* logged in comments */
 /* allowed tags */
 #allowed_tags {
   margin: 1.5em 10px 0.7335em 0;
@@ -1645,33 +1568,60 @@ h3.reply-title {
   border-top: 1px solid #CCC;
   padding-top: 10px;
 }
-#side .widget-container.advanced_recent_posts_widget {
-  font-size: 1em !important;
-  line-height: 1.4em !important;
+#side .widget-container.widget_FacebookLikeBox iframe {
+  background: #ffffff;
 }
-#side .widget-container.advanced_recent_posts_widget a.post-title {
-  font-size: 1em;
-}
-#side ul {
+#side .advanced_recent_posts_widget ul,
+#side .widget_subpages ul {
   margin-top: 0;
   padding-left: 0;
 }
-#side ul li {
+#side .advanced_recent_posts_widget ul li,
+#side .widget_subpages ul li {
+  font-size: 1.2rem;
   margin: 0 0 2px;
-  padding: 6px 10px;
-  color: #2873b5;
-  font-weight: bold;
-  background: #222222;
+  color: #ffffff;
   list-style: none;
   text-transform: uppercase;
+  background: #222222;
+  border: 0;
   /* deep nesting */
 
 }
-#side ul li.current_page_item a {
+#side .advanced_recent_posts_widget ul li a,
+#side .widget_subpages ul li a {
+  font-size: 1.2rem !important;
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-weight: bold;
   color: #ffffff;
 }
-#side ul li:hover a {
-  color: #ffffff;
+#side .advanced_recent_posts_widget ul li a:hover,
+#side .widget_subpages ul li a:hover {
+  color: #2873b5;
+}
+#side .advanced_recent_posts_widget ul li.current_page_item > a,
+#side .widget_subpages ul li.current_page_item > a {
+  color: #2873b5;
+}
+#side .advanced_recent_posts_widget ul li ul,
+#side .widget_subpages ul li ul {
+  border-top: 1px solid #555555;
+  margin: 0 12px 0px 12px;
+  padding-bottom: 10px;
+}
+#side .advanced_recent_posts_widget ul li ul li,
+#side .widget_subpages ul li ul li {
+  margin: 0;
+  font-size: 1rem;
+  padding-left: 0px;
+  border-bottom: 1px solid #555555;
+}
+#side .advanced_recent_posts_widget ul li ul li a,
+#side .widget_subpages ul li ul li a {
+  padding: 6px 12px;
+  font-size: 1rem !Important;
 }
 /*********************
 13. FOOTER STYLES
@@ -1680,6 +1630,12 @@ h3.reply-title {
   clear: both;
   background-color: #383838;
   padding: 2em 0;
+}
+.footer a {
+  text-decoration: none;
+}
+.footer a:hover {
+  color: #bfbfbe;
 }
 .footer .menu-main-menu-container ul li {
   display: inline-block;
@@ -1690,6 +1646,8 @@ h3.reply-title {
 }
 .footer .widget-container {
   padding-bottom: 2em;
+  color: #8c8c8b;
+  font-size: 1.24em;
 }
 .footer .widget-container .widget-title {
   color: #bbbbbb;
@@ -1698,23 +1656,15 @@ h3.reply-title {
   margin-bottom: .5em;
 }
 .footer .widget-container img {
-  width: 85%;
+  max-width: 100%;
   height: auto;
-}
-.footer .widget-container span,
-.footer .widget-container a,
-.footer .widget-container p {
-  color: #8c8c8b;
-  font-size: 1.24em;
-}
-.footer .widget-container a:hover {
-  color: #2873b5;
 }
 .footer .widget-container h1 {
   font-size: 2em;
 }
 .footer .widget-container h1,
 .footer .widget-container h4,
+.footer .widget-container h5,
 .footer .widget-container p {
   margin: 0;
 }
@@ -1754,16 +1704,6 @@ h3.reply-title {
   opacity: 1;
 }
 /*
-	if you checked out the link above:
-	http://www.alistapart.com/articles/organizing-mobile/
-	you'll want to style the footer nav
-	a bit more in-depth. Remember to keep
-	it simple because you'll have to
-	override these styles for the desktop
-	view.
-	*/
-/* end .footer-links */
-/*
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
 larger than an iPhone but smaller than a tablet. Let's call them
@@ -1789,33 +1729,6 @@ tweeners.
   /*********************
   NAVIGATION STYLES
   *********************/
-  /* .menu is clearfixed inside mixins.scss */
-  .menu {
-    /* end .menu ul */
-  
-  }
-  .menu ul {
-    /* end .menu ul li */
-  
-    /* highlight current page */
-  
-    /* end current highlighters */
-  
-  }
-  .menu ul li {
-    /*
-  				plan your menus and drop-downs wisely.
-  				*/
-  
-  }
-  .menu ul li a {
-    /*
-  					you can use hover styles here even though this size
-  					has the possibility of being a mobile device.
-  					*/
-  
-  }
-  /* end .menu */
   /*********************
   POSTS & CONTENT STYLES
   *********************/
@@ -1847,11 +1760,6 @@ tweeners.
   /*********************
   FOOTER STYLES
   *********************/
-  /*
-  check your menus here. do they look good?
-  do they need tweaking?
-  */
-  /* end .footer-links */
 }
 /*
 TABLET & SMALLER LAPTOPS
@@ -2041,78 +1949,15 @@ you can add resource intensive styles.
   #megaMenu #megaUber li {
     float: none;
   }
-  .nav {
-    background: #eee;
-    border: 0;
-    /* end .menu ul li */
-  
-    /* highlight current page */
-  
-    /* end current highlighters */
-  
-  }
-  .nav li {
-    float: left;
-    position: relative;
-    /*
-  		plan your menus and drop-downs wisely.
-  		*/
-  
-    /* showing sub-menus */
-  
-  }
-  .nav li a {
-    border-bottom: 0;
-    /*
-  			you can use hover styles here even though this size
-  			has the possibility of being a mobile device.
-  			*/
-  
-  }
-  .nav li a:hover,
-  .nav li a:focus {
-    background-color: #dedede;
-  }
-  .nav li ul.sub-menu,
-  .nav li ul.children {
-    margin-top: 0;
-    border: 1px solid #ccc;
-    border-top: 0;
-    position: absolute;
-    display: none;
-    z-index: 8999;
-    /* highlight sub-menu current page */
-  
-  }
-  .nav li ul.sub-menu li,
-  .nav li ul.children li {
-    /*
-  				if you need to go deeper, go nuts
-  				just remember deeper menus suck
-  				for usability. k, bai.
-  				*/
-  
-  }
-  .nav li ul.sub-menu li a,
-  .nav li ul.children li a {
-    padding-left: 10px;
-    border-right: 0;
-    display: block;
-    width: 180px;
-    border-bottom: 1px solid #ccc;
-  }
-  .nav li ul.sub-menu li:last-child a,
-  .nav li ul.children li:last-child a {
-    border-bottom: 0;
-  }
-  .nav li:hover ul {
-    top: auto;
-    display: block;
-  }
-  /* end .nav */
   /*********************
   CONTENT STYLES
   *********************/
+  .page-children .entry-feature {
+    float: left;
+  }
+  .page-children .entry-preview {
+    margin-left: 320px;
+  }
   .page-template-page-staff-list-php #trainer-list .trainer .photo {
     width: 28%;
     display: inline-block;
@@ -2171,34 +2016,9 @@ you can add resource intensive styles.
     margin-top: 0.75em;
     padding-left: 1em;
   }
-  /* links widget */
-  /* meta widget */
-  /* pages widget */
-  /* recent-posts widget */
-  /* archives widget */
-  /* tag-cloud widget */
-  /* calendar widget */
-  /* category widget */
-  /* recent-comments widget */
-  /* search widget */
-  /* text widget */
   /*********************
   FOOTER STYLES
   *********************/
-  /*
-  you'll probably need to do quite a bit
-  of overriding here if you styled them for
-  mobile. Make sure to double check these!
-  */
-  .footer-links ul li {
-    /*
-  			be careful with the depth of your menus.
-  			it's very rare to have multi-depth menus in
-  			the footer.
-  			*/
-  
-  }
-  /* end .footer-links */
 }
 /*
 DESKTOP

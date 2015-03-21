@@ -36,9 +36,9 @@ $blog_name = esc_attr(get_bloginfo('name', 'display'));
 
 		<div id="topbar">
 			<div id="inner-topbar" class="wrap clearfix">
-				<div id="contact" class="first sevencol"><? echo do_shortcode("[smartblock id=157]"); ?></div><!-- /#contact -->
-				<div id="social" class="fivecol"><div class="icons clearfix"><? echo display_social_stickers(); ?></div></div><!-- /#social -->
-			</div><!-- /#inner-topbar -->
+				<div id="contact" class="first sevencol"><? echo do_shortcode("[smartblock id=11]"); ?></div>
+				<div id="social" class="fivecol"><div class="icons clearfix"><? echo display_social_stickers(); ?></div></div>
+			</div>
 		</div>
 
 		<div id="inner-header" class="clearfix">

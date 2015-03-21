@@ -61,6 +61,13 @@ TOOLS
   white-space: nowrap;
   overflow: hidden;
 }
+.image-box {
+  line-height: 0;
+}
+.image-box img {
+  width: 100%;
+  height: auto;
+}
 /*********************
 COLORS
 Need help w/ choosing your colors? Try this site out:
@@ -96,7 +103,7 @@ TYPOGRAPHY
   font-style: normal;
 }
 .title-font {
-  font-family: "akzidenzmd", 'Trebuchet MS', helvetica, sans-serif;
+  font-family: "akzidenzmd", "Trebuchet MS", helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 100;
@@ -231,14 +238,11 @@ BUTTONS
   background-image: -o-linear-gradient(top, #e40f42, #cc0e3b);
   background-image: linear-gradient(to bottom, #e40f42, #cc0e3b);
 }
-.button:active,
-.button:visited:active {
-  background-color: #f01d4f;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e40f42), to(#f01d4f));
-  background-image: -webkit-linear-gradient(top, #e40f42, #f01d4f);
-  background-image: -moz-linear-gradient(top, #e40f42, #f01d4f);
-  background-image: -o-linear-gradient(top, #e40f42, #f01d4f);
-  background-image: linear-gradient(to bottom, #e40f42, #f01d4f);
+.button span,
+.button:visited span {
+  font-family: "Georgia";
+  font-weight: bold;
+  line-height: 1.1em;
 }
 .blue-button,
 .blue-button:visited {
@@ -294,33 +298,6 @@ upon your base.less styles.
 /*********************
 NAVIGATION STYLES
 *********************/
-/* .menu is clearfixed inside mixins.scss */
-.menu {
-  /* end .menu ul */
-
-}
-.menu ul {
-  /* end .menu ul li */
-
-  /* highlight current page */
-
-  /* end current highlighters */
-
-}
-.menu ul li {
-  /*
-				plan your menus and drop-downs wisely.
-				*/
-
-}
-.menu ul li a {
-  /*
-					you can use hover styles here even though this size
-					has the possibility of being a mobile device.
-					*/
-
-}
-/* end .menu */
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -352,11 +329,6 @@ POSTS & CONTENT STYLES
 /*********************
 FOOTER STYLES
 *********************/
-/*
-check your menus here. do they look good?
-do they need tweaking?
-*/
-/* end .footer-links */
 /* import grid */
 /******************************************************************
 Site Name:
@@ -539,78 +511,15 @@ NAVIGATION STYLES
 #megaMenu #megaUber li {
   float: none;
 }
-.nav {
-  background: #eee;
-  border: 0;
-  /* end .menu ul li */
-
-  /* highlight current page */
-
-  /* end current highlighters */
-
-}
-.nav li {
-  float: left;
-  position: relative;
-  /*
-		plan your menus and drop-downs wisely.
-		*/
-
-  /* showing sub-menus */
-
-}
-.nav li a {
-  border-bottom: 0;
-  /*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/
-
-}
-.nav li a:hover,
-.nav li a:focus {
-  background-color: #dedede;
-}
-.nav li ul.sub-menu,
-.nav li ul.children {
-  margin-top: 0;
-  border: 1px solid #ccc;
-  border-top: 0;
-  position: absolute;
-  display: none;
-  z-index: 8999;
-  /* highlight sub-menu current page */
-
-}
-.nav li ul.sub-menu li,
-.nav li ul.children li {
-  /*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/
-
-}
-.nav li ul.sub-menu li a,
-.nav li ul.children li a {
-  padding-left: 10px;
-  border-right: 0;
-  display: block;
-  width: 180px;
-  border-bottom: 1px solid #ccc;
-}
-.nav li ul.sub-menu li:last-child a,
-.nav li ul.children li:last-child a {
-  border-bottom: 0;
-}
-.nav li:hover ul {
-  top: auto;
-  display: block;
-}
-/* end .nav */
 /*********************
 CONTENT STYLES
 *********************/
+.page-children .entry-feature {
+  float: left;
+}
+.page-children .entry-preview {
+  margin-left: 320px;
+}
 .page-template-page-staff-list-php #trainer-list .trainer .photo {
   width: 28%;
   display: inline-block;
@@ -669,34 +578,9 @@ SIDEBARS & ASIDES
   margin-top: 0.75em;
   padding-left: 1em;
 }
-/* links widget */
-/* meta widget */
-/* pages widget */
-/* recent-posts widget */
-/* archives widget */
-/* tag-cloud widget */
-/* calendar widget */
-/* category widget */
-/* recent-comments widget */
-/* search widget */
-/* text widget */
 /*********************
 FOOTER STYLES
 *********************/
-/*
-you'll probably need to do quite a bit
-of overriding here if you styled them for
-mobile. Make sure to double check these!
-*/
-.footer-links ul li {
-  /*
-			be careful with the depth of your menus.
-			it's very rare to have multi-depth menus in
-			the footer.
-			*/
-
-}
-/* end .footer-links */
 /******************************************************************
 Site Name: 
 Author: 

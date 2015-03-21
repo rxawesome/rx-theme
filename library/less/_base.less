@@ -198,6 +198,7 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 		img {
 			display: block;
 			margin: 2em auto;
+			max-width: 100%;
 		}
 	}
 
@@ -233,7 +234,7 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 					}
 
 					.sub-menu {
-						background: black;
+						background: @black;
 						border: none;
 						box-shadow: none;
 						left: inherit !important;
@@ -299,6 +300,60 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 	}
 }
 
+
+
+.page-template-page-staff-popup-php {
+	#staff-list {
+		.staff-member {
+			.photo {
+				.image-box;
+			}
+			
+			&.preview {
+				margin-bottom: 15px;
+
+				.photo {
+					position: relative;
+					
+					h2 {
+						color: @white;
+						background: rgba(0, 0, 0, .6);
+						position: absolute;
+						bottom: 0;
+						width: 100%;
+						margin: 0;
+						line-height: 1em;
+						padding: 10px 15px;
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+
+	.page-children {
+		padding-top: 1em;
+		border-top: 1px solid @light-gray;
+		
+		.entry-feature {
+			.Photo {
+				line-height: 0px;
+			}
+		}
+		
+		.entry-preview {
+			.entry-content {
+				
+			}
+			.article-footer {
+				.More,
+				.button {
+					margin: 0;
+				}
+			}
+		}
+	}
 
 	.trainer {
 		border-bottom: 1px solid #DDDDDD;
@@ -464,58 +519,44 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 09. PAGE NAVI STYLES
 ******************************************************************/
 
-.page-navigation,
-.wp-prev-next {
-	margin: 1.1em 0 2.2em;
-}
+.page-navigation {
+	padding-top: 2em;
+	border-top: 1px solid @light-gray;
+
 	.bones_page_navi {
+		margin: 1em 0;
+		padding: 0 !important;
 		list-style-type: none !important;
+
 		li {
 			float: left;
-			margin-left: 10px;
-			&:hover, &:focus {
-				border-bottom: 2px solid @theme-color;
-			}
+			margin: 0px 2px !important;
+
 			a {
-				padding: 3px 6px;
+				padding: 5px 10px;
 				display: block;
 				text-decoration: none;
 				position: relative;
+				text-transform: uppercase;
+				
+				background: lighten(@theme-color, 25%);
+				color: @white;
+			}
+
+			&:hover,
+			&.bpn-current {
+				a {
+					color: @white;
+					background: @theme-color;
+				}
+			}
+
+			&:first-child {
+				margin-left: 0;
 			}
 		}
-
-		/* current page link */
-		li.bpn-current {
-			padding: 3px 6px;
-			border-bottom: 2px solid @theme-color;
-			position: relative;
-		} /* end .bones_page_navi .bpn-current */
-
-		/* common styles for page-navi links */
-		li.bpn-prev-link,
-		li.bpn-next-link {
-			font-weight: 700;
-
-			a {
-				padding: 0;
-			}
-		}
-
-		/* remove the bg on end links */
-		li.bpn-prev-link a:hover,
-		li.bpn-next-link a:hover,
-		li.bpn-first-page-link a:hover,
-		li.bpn-last-page-link a:hover {
-			background: none;
-		}
-	} /* end .bones_page_navi */
-
-	/* fallback previous & next links */
-	.wp-prev-next {
-		ul {}
-		.prev-link { float: left; }
-		.next-link { float: right; }
-	} /* end .wp-prev-next */
+	}
+}
 	
 /******************************************************************
 10. COMMENT STYLES
@@ -781,54 +822,67 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 				}
 			}
 		}
-		
-		&.advanced_recent_posts_widget {
-			font-size: 1em !important;
-			line-height: 1.4em !important;
-			
-			a.post-title {
-				font-size: 1em;
-				text-decoration: none;
-			}
-		}
-		
-		&.widget_subpages {
-			a { text-decoration: none; }
-		}
-		
+
 		&.widget_FacebookLikeBox {
 			iframe { background: @white; }
 		}
 	}
+
+	.advanced_recent_posts_widget,
+	.widget_subpages {
+		ul {
+			margin-top: 0;
+			padding-left: 0;
 	
-	ul {
-		margin-top: 0;
-		padding-left: 0;
-
-		li {
-			margin: 0 0 2px;
-			color: @theme-color;
-			list-style: none;
-			text-transform: uppercase;
-
-			a {
-				display: block;
-				padding: 6px 10px;
-				font-weight: bold;
+			li {
+				font-size: 1.2rem;
+				margin: 0 0 2px;
+				color: @white;
+				list-style: none;
+				text-transform: uppercase;
 				background: @black;
-			}
-
-			&:hover,
-			&.current_page_item {
+				border: 0;
+	
 				a {
-					color: @white;	
+					font-size: 1.2rem !important;
+					display: block;
+					padding: 8px 12px;
+					text-decoration: none;
+					font-weight: bold;
+					color: @white;
+					
+					&:hover {
+						color: @theme-color;
+					}
+				}
+
+				&.current_page_item {
+					> a {
+						color: @theme-color;	
+					}
+				}
+
+				&:last-child {}
+	
+				/* deep nesting */
+				ul {
+					border-top: 1px solid lighten(@black, 20%);
+					margin: 0 12px 0px 12px;
+					padding-bottom: 10px;
+					
+					li {
+						margin: 0;
+						font-size: 1rem;
+						padding-left: 0px;
+						border-bottom: 1px solid lighten(@black, 20%);
+						
+						a {		
+							padding: 6px 12px;
+							font-size: 1rem !Important;
+						}
+					}
 				}
 			}
-
-			&:last-child {}
-
-			/* deep nesting */
-			ul {}
 		}
 	}
 }

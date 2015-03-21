@@ -1,0 +1,111 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+/*********************
+GENERAL STYLES
+*********************/
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+.wrap {
+  max-width: 1140px;
+}
+/*********************
+HEADER SYTLES
+*********************/
+.header #topbar #contact ul li {
+  float: left;
+  padding-right: 1em;
+}
+.header #topbar #social .icons {
+  float: right;
+}
+/*********************
+NAVIGATION STYLES
+*********************/
+#megaMenu #megaUber {
+  text-align: center;
+}
+#megaMenu #megaUber li {
+  float: none;
+}
+/*********************
+CONTENT STYLES
+*********************/
+.page-children .entry-feature {
+  float: left;
+}
+.page-children .entry-preview {
+  margin-left: 320px;
+}
+.page-template-page-staff-list-php #trainer-list .trainer .photo {
+  width: 28%;
+  display: inline-block;
+}
+.page-template-page-staff-list-php #trainer-list .trainer .photo img {
+  width: 100%;
+  height: auto;
+}
+.page-template-page-staff-list-php #trainer-list .trainer .details {
+  width: 67%;
+  display: inline-block;
+  font-size: 13px;
+}
+.page-template-page-staff-list-php #trainer-list .trainer .details .title h2 {
+  margin: 0;
+  line-height: 1.1em;
+  letter-spacing: 0px;
+}
+.page-template-page-staff-list-php #trainer-list .trainer .details .title h3 {
+  color: #777;
+  margin: 0;
+  font-style: italic;
+  line-height: 1.1em;
+  letter-spacing: 0px;
+}
+.page-template-page-staff-list-php #trainer-list .trainer .details h4 {
+  margin: 0;
+}
+.page-template-page-staff-list-php #trainer-list .trainer .details ul {
+  list-style: disc;
+  margin-top: .3em;
+}
+.page-template-page-staff-list-php #trainer-list .trainer .details ul li {
+  list-style-position: inside;
+}
+/*********************
+SIDEBARS & ASIDES
+*********************/
+.sidebar {
+  margin-top: 2.2em;
+}
+.widgettitle {
+  border-bottom: 2px solid #444;
+  margin-bottom: 0.75em;
+}
+.widget {
+  padding: 0 10px;
+  margin: 2.2em 0;
+}
+.widget ul li {
+  margin-bottom: 0.75em;
+  /* deep nesting */
+
+}
+.widget ul li ul {
+  margin-top: 0.75em;
+  padding-left: 1em;
+}
+/*********************
+FOOTER STYLES
+*********************/

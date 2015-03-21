@@ -78,11 +78,10 @@ function bones_head_cleanup() {
 	remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 	// WP version
 	remove_action( 'wp_head', 'wp_generator' );
-  // remove WP version from css
-  add_filter( 'style_loader_src', 'bones_remove_wp_ver_css_js', 9999 );
-  // remove Wp version from scripts
-  add_filter( 'script_loader_src', 'bones_remove_wp_ver_css_js', 9999 );
-
+	// remove WP version from css
+	add_filter( 'style_loader_src', 'bones_remove_wp_ver_css_js', 9999 );
+	// remove Wp version from scripts
+	add_filter( 'script_loader_src', 'bones_remove_wp_ver_css_js', 9999 );
 } /* end bones head cleanup */
 
 // remove WP version from RSS
@@ -104,15 +103,15 @@ function bones_remove_wp_widget_recent_comments_style() {
 
 // remove injected CSS from recent comments widget
 function bones_remove_recent_comments_style() {
-  global $wp_widget_factory;
-  if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
-    remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
-  }
+	global $wp_widget_factory;
+	if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
+		remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
+	}
 }
 
 // remove injected CSS from gallery
 function bones_gallery_style($css) {
-  return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css);
+	return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css);
 }
 
 
@@ -345,17 +344,17 @@ function bones_page_navi($before = '', $after = '') {
 		echo '<li class="bpn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';
 	}
 	echo '<li class="bpn-prev-link">';
-	previous_posts_link('<<');
+	previous_posts_link('&#171;');
 	echo '</li>';
 	for($i = $start_page; $i  <= $end_page; $i++) {
 		if($i == $paged) {
-			echo '<li class="bpn-current">'.$i.'</li>';
+			echo '<li class="bpn-current"><a href="#">'.$i.'</a></li>';
 		} else {
 			echo '<li><a href="'.get_pagenum_link($i).'">'.$i.'</a></li>';
 		}
 	}
 	echo '<li class="bpn-next-link">';
-	next_posts_link('>>');
+	next_posts_link('&#187;');
 	echo '</li>';
 	if ($end_page < $max_page) {
 		$last_page_text = __( "Last", 'bonestheme' );

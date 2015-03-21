@@ -8,20 +8,23 @@ get_header(); ?>
 <div id="content">
 	<div id="inner-content" class="wrap clearfix Program">
 		
-		<? if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<? #$photo = has_post_thumbnail($post->ID) ? get_the_post_thumbnail($post->ID, 'large') : ""; ?>
-		<div class="twelvecol first clearfix">
-			<!--<div class="Photo"><div><?=$photo;?></div></div>-->
-			<h1><? the_title();?></h1>
-		</div>
-		<? endwhile; endif; ?>
-		
 		<div id="main" class="eightcol first clearfix" role="main">
-			<div class="entry-content">
-				<? the_content(); ?>
-			</div>
-			&nbsp;
-			<div class="page-children"><?
+		<? if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+			<article id="post-<? the_ID(); ?>" <? post_class('clearfix'); ?> role="article">
+				<header class="article-header">
+					<h1 class="page-title" itemprop="headline"><? the_title(); ?></h1>
+					<div class="featured"><? the_post_thumbnail('bones-thumb-600'); ?></div>
+				</header> <!-- end article header -->
+
+				<section class="entry-content clearfix" itemprop="articleBody">
+					<? the_content(); ?>
+				</section> <!-- end article section -->
+			</article> <!-- end article -->
+
+		<? endwhile; endif; ?>
+
+			<div class="page-children loop"><?
 			
 			$args = array(
 				'post_type'      => 'page',
@@ -37,30 +40,31 @@ get_header(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix child'); ?> role="article">
 
 					<div class="entry-feature">
-						<?php $image = wp_get_attachment_image_src(get_field('preview_image'), 'bones-thumb-300'); ?>
-						<div class="Photo"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><div><?php /* the_post_thumbnail( 'bones-thumb-300' ); */ ?><img src="<?php echo $image[0]; ?>" /></div></a></div>
+						<? $image = wp_get_attachment_image_src(get_field('preview_image'), 'bones-thumb-300'); ?>
+						<div class="Photo">
+							<a href="<? the_permalink() ?>" title="<? the_title_attribute(); ?>"><img src="<? echo $image[0]; ?>" /></a>
+						</div>
 					</div>
 
 					<div class="entry-preview">
 						<header class="article-header">
-							<h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-						</header> <!-- end article header -->
+							<h2 class="entry-title"><a href="<? the_permalink() ?>" rel="bookmark" title="<? the_title_attribute(); ?>"><? the_title(); ?></a></h2>
+						</header>
 	
-						<section class="entry-content clearfix">
-							<?php the_field("preview_text"); ?>
-						</section> <!-- end article section -->
+						<section class="entry-content">
+							<? the_field("preview_text"); ?>
+						</section>
 
 						<footer class="article-footer">
-							<p class="More"><a href="<? the_permalink() ?>">Learn More &#187;</a></p>
+							<p class="More"><a href="<? the_permalink() ?>" class="button">Learn More <span>&#187;</span></a></p>
 						</footer>
 					</div>
-					<div class="Clear"></div>
 
-				</article> <!-- end article -->
+				</article>
 				
 			<? endwhile; endif; ?>
 			</div>
-		</div> <!-- end #main -->
+		</div>
 		
 		<div id="side" class="fourcol last">
 			<? get_sidebar(); ?>
