@@ -225,6 +225,10 @@ BUTTONS
   font-weight: bold;
   line-height: 1.1em;
 }
+.button.large,
+.button:visited.large {
+  font-size: 1.5em;
+}
 .blue-button,
 .blue-button:visited {
   border-color: #1472ad;

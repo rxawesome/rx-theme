@@ -220,7 +220,7 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 				li {
 					a {
 						color: @white;
-						padding: 0.5em 1em;
+						padding: 0.8em 1.2em;
 						.title-font;
 						&:hover {
 							color: @theme-color;
@@ -230,11 +230,12 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 						}
 						span {
 							font-size: 1.8em;
+							text-transform: uppercase;
 						}
 					}
 
 					.sub-menu {
-						background: @black;
+						/* background: @black; */
 						border: none;
 						box-shadow: none;
 						left: inherit !important;
@@ -297,6 +298,23 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 				}
 			}
 		}
+	}
+}
+.home #content {
+	padding: 0;
+}
+
+.Section {
+	.section-title {
+		text-align: center;
+	}
+	
+	p {
+		text-align: center;
+	}
+	
+	&#FreeIntro {
+		
 	}
 }
 
@@ -896,8 +914,8 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 	background-color: @gray;
 	padding: 2em 0;
 	
-	a { text-decoration: none; }
-	a:hover { color: lighten(@footer-text, 20%); }
+	a { text-decoration: none; color: lighten(@footer-text, 20%); }
+	a:hover { color: @white; }
 
 	.menu-main-menu-container {
 		ul {

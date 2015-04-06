@@ -19,7 +19,7 @@ else {
 	<div class="wod widget-container">
 		<h3 class="widget-title">Today's WOD</h3>
 		<?
-		query_posts(array('cat'=>'wod', 'posts_per_page'=>1));
+		query_posts(array('category_name'=>'workout-of-the-day', 'posts_per_page'=>1));
 			
 		$do_not_duplicate = array();
 		while (have_posts()) : the_post();

@@ -718,6 +718,10 @@ BUTTONS
   font-weight: bold;
   line-height: 1.1em;
 }
+.button.large,
+.button:visited.large {
+  font-size: 1.5em;
+}
 .blue-button,
 .blue-button:visited {
   border-color: #1472ad;
@@ -780,6 +784,17 @@ Theme Colors
   background-color: #222222;
   background-image: none;
   border-color: #222222;
+}
+.button.black,
+.button:visited.black {
+  background: #222222;
+  border-color: #222222;
+}
+.button.white,
+.button:visited.white {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #2873b5;
 }
 /*********************
 Font Usage
@@ -1059,7 +1074,7 @@ h3.reply-title {
 }
 .header nav #megaMenu #megaUber li a {
   color: #ffffff;
-  padding: 0.5em 1em;
+  padding: 0.8em 1.2em;
   font-family: "akzidenzmd", "Trebuchet MS", helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -1075,9 +1090,11 @@ h3.reply-title {
 }
 .header nav #megaMenu #megaUber li a span {
   font-size: 1.8em;
+  text-transform: uppercase;
 }
 .header nav #megaMenu #megaUber li .sub-menu {
-  background: #222222;
+  /* background: @black; */
+
   border: none;
   box-shadow: none;
   left: inherit !important;
@@ -1134,6 +1151,15 @@ h3.reply-title {
 #content ol li ul li,
 #content ul li ul li {
   padding-left: 35px;
+}
+.home #content {
+  padding: 0;
+}
+.Section .section-title {
+  text-align: center;
+}
+.Section p {
+  text-align: center;
 }
 .page-template-page-staff-popup-php #staff-list .staff-member .photo {
   line-height: 0;
@@ -1633,9 +1659,10 @@ h3.reply-title {
 }
 .footer a {
   text-decoration: none;
+  color: #bfbfbe;
 }
 .footer a:hover {
-  color: #bfbfbe;
+  color: #ffffff;
 }
 .footer .menu-main-menu-container ul li {
   display: inline-block;
