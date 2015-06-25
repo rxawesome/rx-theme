@@ -10,6 +10,7 @@ Theme Colors
 *********************/
 
 @theme-color:	#2873b5;
+@theme-accent:	#2873b5;
 @link-color:	@theme-color;
 @link-hover:	darken(@link-color, 9%);
 
@@ -40,13 +41,49 @@ Theme Colors
 }
 
 /*********************
-Font Usage
+Homepage Layout
 *********************/
 
 
-/*********************
-Base Styles
-*********************/
+.Section {
+	padding: 40px 0;
+	
+	.twelvecol {
+		text-align: center;
+
+		.section-title {
+			margin: 0;
+			line-height: 1.1em;
+			text-align: center;
+		}
+		
+		p {
+			font-size: 18px;
+			text-align: center;
+		}
+	}
+	
+	&#Slideshow {
+		padding: 0;
+		display: none;
+	}
+	
+	&#Tagline {
+		
+	}
+
+	&#FreeIntro {
+		
+		.button {
+			margin-bottom: 0;
+		}
+	}
+	
+	&#Promotions {
+		
+	}
+}
+
 
 
 
@@ -56,11 +93,34 @@ Base Styles
 Larger Mobile Device
 *********************/
 
-
 @media only screen and (min-width: 481px) {
 
+	.Section {
+		.twelvecol {
+			.section-title { }
+			
+			p { }
+		}
+		
+		&#Tagline {
+			
+		}
+		
+		&#Slideshow {
+			display: block;
+		}
+	
+		&#FreeIntro {
+			
+		}
+		
+		&#Promotions {
+			
+		}
+	}
 
 } // end of media query
+
 
 /*********************
 Tablet & Up
@@ -68,6 +128,31 @@ Tablet & Up
 
 @media only screen and (min-width: 768px) {
 
+	.Section {
+		.twelvecol {
+			.section-title { }
+			
+			p {
+				padding: 0 100px;
+			}
+		}
+		
+		&#Slideshow {
+			
+		}
+		
+		&#Tagline {
+			
+		}
+	
+		&#FreeIntro {
+			
+		}
+		
+		&#Promotions {
+			
+		}
+	}
 
 } // end of media query
 

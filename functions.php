@@ -45,7 +45,7 @@ require_once('library/bones.php'); // if you remove this, bones will break
 
 // Thumbnail sizes
 add_image_size( 'bones-thumb-600', 700, 460, true );
-add_image_size( 'bones-thumb-300', 300, 200, true );
+add_image_size( 'bones-thumb-300', 300, 225, true );
 
 
 /************* ACTIVE SIDEBARS ********************/

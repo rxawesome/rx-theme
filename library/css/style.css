@@ -555,20 +555,28 @@ http://sachagreif.com/sass-color-variables/
 /*********************
 TYPOGRAPHY
 *********************/
+/*
 @font-face {
-  font-family: 'akzidenzmd';
-  src: url('../fontface-akzidenzmd/akzidenzgroteskbq-bdcnd-webfont.eot');
-  src: url('../fontface-akzidenzmd/akzidenzgroteskbq-bdcnd-webfont.eot?#iefix') format('embedded-opentype'), url('../fontface-akzidenzmd/akzidenzgroteskbq-bdcnd-webfont.woff') format('woff'), url('../fontface-akzidenzmd/akzidenzgroteskbq-bdcnd-webfont.ttf') format('truetype'), url('../fontface-akzidenzmd/akzidenzgroteskbq-bdcnd-webfont.svg#akzidenz-grotesk_bq_condensBd') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'akzidenzmd';
+    src: url('../fontface-akzidenzmd/akzidenzgroteskbq-bdcnd-webfont.eot');
+    src: url('../fontface-akzidenzmd/akzidenzgroteskbq-bdcnd-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fontface-akzidenzmd/akzidenzgroteskbq-bdcnd-webfont.woff') format('woff'),
+         url('../fontface-akzidenzmd/akzidenzgroteskbq-bdcnd-webfont.ttf') format('truetype'),
+         url('../fontface-akzidenzmd/akzidenzgroteskbq-bdcnd-webfont.svg#akzidenz-grotesk_bq_condensBd') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
-  font-family: 'bebas_neueregular';
-  src: url('../fontface-bebasneue/bebasneue-webfont.eot');
-  src: url('../fontface-bebasneue/bebasneue-webfont.eot?#iefix') format('embedded-opentype'), url('../fontface-bebasneue/bebasneue-webfont.woff') format('woff'), url('../fontface-bebasneue/bebasneue-webfont.ttf') format('truetype'), url('../fontface-bebasneue/bebasneue-webfont.svg#bebas_neueregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'bebas_neueregular';
+    src: url('../fontface-bebasneue/bebasneue-webfont.eot');
+    src: url('../fontface-bebasneue/bebasneue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fontface-bebasneue/bebasneue-webfont.woff') format('woff'),
+         url('../fontface-bebasneue/bebasneue-webfont.ttf') format('truetype'),
+         url('../fontface-bebasneue/bebasneue-webfont.svg#bebas_neueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
+*/
 @font-face {
   font-family: 'oldsansblackregular';
   src: url('../fontface-oldsansblack/oldsansblack-webfont.eot');
@@ -577,7 +585,7 @@ TYPOGRAPHY
   font-style: normal;
 }
 .title-font {
-  font-family: "akzidenzmd", "Trebuchet MS", helvetica, sans-serif;
+  font-family: "oldsansblackregular", "Trebuchet MS", helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 100;
@@ -721,6 +729,7 @@ BUTTONS
 .button.large,
 .button:visited.large {
   font-size: 1.5em;
+  padding: .4em 1em;
 }
 .blue-button,
 .blue-button:visited {
@@ -772,7 +781,7 @@ Theme Colors
   border-color: #2873b5;
   background-image: none;
   border-radius: 0px;
-  font-family: "akzidenzmd", "Trebuchet MS", helvetica, sans-serif;
+  font-family: "oldsansblackregular", "Trebuchet MS", helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 100;
@@ -781,14 +790,14 @@ Theme Colors
 }
 .button:hover,
 .button:visited:hover {
-  background-color: #222222;
+  background-color: #202020;
   background-image: none;
-  border-color: #222222;
+  border-color: #202020;
 }
 .button.black,
 .button:visited.black {
-  background: #222222;
-  border-color: #222222;
+  background: #202020;
+  border-color: #202020;
 }
 .button.white,
 .button:visited.white {
@@ -860,7 +869,7 @@ body {
   font-family: "Trebuchet MS", helvetica, sans-serif;
   font-size: 100%;
   line-height: 1.4;
-  color: #222222;
+  color: #202020;
 }
 /********************
 02. WORDPRESS BODY CLASSES
@@ -928,7 +937,7 @@ h5,
 #searchsubmit,
 .go {
   text-rendering: optimizelegibility;
-  font-family: "akzidenzmd", "Trebuchet MS", helvetica, sans-serif;
+  font-family: "oldsansblackregular", "Trebuchet MS", helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 100;
@@ -970,7 +979,7 @@ h5,
 }
 h1.page-title {
   font-size: 3em !important;
-  border-bottom: 1px dotted #222222;
+  border-bottom: 1px dotted #202020;
   margin: 0 0 .3em 0 !important;
   padding: 0 0 .1em 0 !important;
   line-height: 1.3em !important;
@@ -983,13 +992,13 @@ h3.widget-title {
   margin: 0 0 .1em 0;
 }
 h3.widget-title a {
-  color: #222222;
+  color: #202020;
   text-decoration: none;
 }
 h3.comments-title,
 h3.reply-title {
   font-size: 1.85em;
-  border-bottom: 1px dotted #222222;
+  border-bottom: 1px dotted #202020;
   padding: 0 0 .4em 0;
   margin-bottom: .4em;
 }
@@ -997,7 +1006,7 @@ h3.reply-title {
 06. HEADER SYTLES
 *********************/
 .header #topbar {
-  background: #222222;
+  background: #202020;
 }
 .header #topbar a {
   text-decoration: none;
@@ -1057,12 +1066,12 @@ h3.reply-title {
   max-width: 100%;
 }
 .header nav {
-  background: #222222;
+  background: #202020;
 }
 .header nav #megaMenu #megaMenuToggle {
   color: #ffffff;
   font-size: 1.5em;
-  font-family: "akzidenzmd", "Trebuchet MS", helvetica, sans-serif;
+  font-family: "oldsansblackregular", "Trebuchet MS", helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 100;
@@ -1075,7 +1084,7 @@ h3.reply-title {
 .header nav #megaMenu #megaUber li a {
   color: #ffffff;
   padding: 0.8em 1.2em;
-  font-family: "akzidenzmd", "Trebuchet MS", helvetica, sans-serif;
+  font-family: "oldsansblackregular", "Trebuchet MS", helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 100;
@@ -1155,11 +1164,27 @@ h3.reply-title {
 .home #content {
   padding: 0;
 }
-.Section .section-title {
+.Section {
+  padding: 40px 0;
+}
+.Section .twelvecol {
   text-align: center;
 }
-.Section p {
+.Section .twelvecol .section-title {
+  margin: 0;
+  line-height: 1.1em;
   text-align: center;
+}
+.Section .twelvecol p {
+  font-size: 18px;
+  text-align: center;
+}
+.Section#Slideshow {
+  padding: 0;
+  display: none;
+}
+.Section#FreeIntro .button {
+  margin-bottom: 0;
 }
 .page-template-page-staff-popup-php #staff-list .staff-member .photo {
   line-height: 0;
@@ -1187,7 +1212,8 @@ h3.reply-title {
 }
 .page-children {
   padding-top: 1em;
-  border-top: 1px solid #bbbbbb;
+  /* border-top: 1px solid @light-gray; */
+
 }
 .page-children .entry-feature .Photo {
   line-height: 0px;
@@ -1229,17 +1255,17 @@ h3.reply-title {
   list-style-position: inside;
 }
 .qa-faqs .qa-faq {
-  border: 1px solid darkey(#bbbbbb, 10%);
+  border: 1px solid darkey(#dedede, 10%);
   padding: 0 1em;
   margin-bottom: .5em;
-  background: #bbbbbb;
+  background: #dedede;
 }
 .qa-faqs .qa-faq .qa-faq-title {
   font-size: 1.1em;
   margin: .7em 0 .5em 0;
 }
 .qa-faqs .qa-faq .qa-faq-title a {
-  color: #222222;
+  color: #202020;
   font-size: 1.2em;
   text-decoration: none;
 }
@@ -1252,7 +1278,7 @@ h3.reply-title {
 }
 .loop .hentry {
   padding: 2.5em 0 3em;
-  border-top: 1px solid #bbbbbb;
+  border-top: 1px solid #dedede;
 }
 .loop .hentry:first-child {
   padding-top: 1.5em;
@@ -1335,7 +1361,7 @@ h3.reply-title {
 ******************************************************************/
 .page-navigation {
   padding-top: 2em;
-  border-top: 1px solid #bbbbbb;
+  border-top: 1px solid #dedede;
 }
 .page-navigation .bones_page_navi {
   margin: 1em 0;
@@ -1430,7 +1456,7 @@ h3.reply-title {
   padding-bottom: 0;
 }
 .commentlist .odd {
-  background: #bbbbbb;
+  background: #dedede;
 }
 .commentlist .even {
   background: #ffffff;
@@ -1577,7 +1603,7 @@ h3.reply-title {
   padding-left: 25px;
 }
 #side .widget-container.wod .post .entry-content ul li {
-  color: #222222;
+  color: #202020;
   padding: .3em 0;
   list-style-type: disc;
   text-transform: none;
@@ -1590,7 +1616,7 @@ h3.reply-title {
 #side .widget-container.wod .post .entry-utility {
   text-transform: none;
   font-size: 0.85em;
-  color: #bbbbbb;
+  color: #dedede;
   border-top: 1px solid #CCC;
   padding-top: 10px;
 }
@@ -1609,7 +1635,7 @@ h3.reply-title {
   color: #ffffff;
   list-style: none;
   text-transform: uppercase;
-  background: #222222;
+  background: #202020;
   border: 0;
   /* deep nesting */
 
@@ -1633,7 +1659,7 @@ h3.reply-title {
 }
 #side .advanced_recent_posts_widget ul li ul,
 #side .widget_subpages ul li ul {
-  border-top: 1px solid #555555;
+  border-top: 1px solid #535353;
   margin: 0 12px 0px 12px;
   padding-bottom: 10px;
 }
@@ -1642,7 +1668,7 @@ h3.reply-title {
   margin: 0;
   font-size: 1rem;
   padding-left: 0px;
-  border-bottom: 1px solid #555555;
+  border-bottom: 1px solid #535353;
 }
 #side .advanced_recent_posts_widget ul li ul li a,
 #side .widget_subpages ul li ul li a {
@@ -1655,7 +1681,7 @@ h3.reply-title {
 .footer {
   clear: both;
   background-color: #383838;
-  padding: 2em 0;
+  padding: 2.5em 0;
 }
 .footer a {
   text-decoration: none;
@@ -1674,10 +1700,10 @@ h3.reply-title {
 .footer .widget-container {
   padding-bottom: 2em;
   color: #8c8c8b;
-  font-size: 1.24em;
+  font-size: 1.15em;
 }
 .footer .widget-container .widget-title {
-  color: #bbbbbb;
+  color: #dedede;
   font-size: 1.8em;
   border-bottom: 1px dotted #888;
   margin-bottom: .5em;
@@ -1696,6 +1722,7 @@ h3.reply-title {
   margin: 0;
 }
 .footer .widget-container h4 {
+  font-size: 1.3em;
   font-weight: normal;
 }
 .footer .widget-container input#s {
@@ -1719,7 +1746,7 @@ h3.reply-title {
   border-top: 0;
 }
 #bottombar {
-  background-color: #222222;
+  background-color: #202020;
   text-align: center;
 }
 #bottombar img {
@@ -1759,6 +1786,9 @@ tweeners.
   /*********************
   POSTS & CONTENT STYLES
   *********************/
+  .Section#Slideshow {
+    display: block;
+  }
   /* entry content */
   .entry-content {
     /* at this larger size, we can start to align images */
@@ -1996,7 +2026,7 @@ you can add resource intensive styles.
   .page-template-page-staff-list-php #trainer-list .trainer .details {
     width: 67%;
     display: inline-block;
-    font-size: 13px;
+    font-size: 14px;
   }
   .page-template-page-staff-list-php #trainer-list .trainer .details .title h2 {
     margin: 0;

@@ -86,16 +86,9 @@ a, a:visited {
 		color: @link-hover;
 	}
 
-	/* on click */
-	&:active { }
 
 	/* mobile tap color */
 	&:link {
-		/*
-		this highlights links on iPhones/iPads.
-		so it basically works like the :hover selector
-		for mobile devices.
-		*/
 		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
 	}
 }
@@ -104,21 +97,21 @@ a, a:visited {
 05. H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .header, .footer, #searchsubmit, .go {
+h1, h2, h3, h4, h5, .header, .footer, #searchsubmit, .go {
 	text-rendering: optimizelegibility;
 	.title-font;
 	line-height: 1.3em;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+h1, h2, h3, h4, h5 {
 	margin-bottom: 0.3em;
 }
 
-h1, .h1 { font-size: 2.5em; }
-h2, .h2 { font-size: 2.1em; }
-h3, .h3 { font-size: 1.8em; }
-h4, .h4 { font-size: 1.5em; }
-h5, .h5 { font-size: 1.2em; }
+h1 { font-size: 2.5em; }
+h2 { font-size: 2.1em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.5em; }
+h5 { font-size: 1.2em; }
 
 h1.page-title { font-size: 3em !important; border-bottom: 1px dotted @black; margin: 0 0 .3em 0 !important; padding: 0 0 .1em 0 !important; line-height: 1.3em !important; }
 h2.entry-title { margin: 0; }
@@ -146,16 +139,12 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 
 				li {
 					display: inline-block;
-					padding-left: 24px;
+					padding-left: 0px;
 					margin: .6em 0 .4em 0;
 					
 					a {
 						font-size: 1.25em
 					}
-					
-					&.icon-phone { background: url("../../library/images/icon-phone.png") no-repeat; }
-					&.icon-email { background: url("../../library/images/icon-mail.png") no-repeat; }
-					&.icon-map { background: url("../../library/images/icon-location.png") no-repeat; }
 				}
 			}
 		}
@@ -192,13 +181,16 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 			}
 		}
 	}
+
 	#inner-header {}
 
 	#logo {
+		padding: 2em 0;
+
 		img {
 			display: block;
-			margin: 2em auto;
 			max-width: 100%;
+			margin: 0 auto;
 		}
 	}
 
@@ -273,7 +265,10 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 
 #content {
 	padding-top: 2.2em;
-	padding-bottom: 2em;
+	padding-bottom: 0;
+	
+	#main { margin-bottom: 3em; }
+	#side { margin-bottom: 2em; }
 	
 	ol { list-style-type: decimal; }
 	ul { list-style-type: disc; }
@@ -302,20 +297,6 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 }
 .home #content {
 	padding: 0;
-}
-
-.Section {
-	.section-title {
-		text-align: center;
-	}
-	
-	p {
-		text-align: center;
-	}
-	
-	&#FreeIntro {
-		
-	}
 }
 
 
@@ -352,7 +333,7 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 
 	.page-children {
 		padding-top: 1em;
-		border-top: 1px solid @light-gray;
+		/* border-top: 1px solid @light-gray; */
 		
 		.entry-feature {
 			.Photo {
@@ -605,7 +586,6 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 }
 
 .commentlist {
-
 	li {
 		position: relative;
 		clear: both;
@@ -667,8 +647,6 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 			}
 		}
 
-		img.photo {}
-
 		img.avatar {
 			position: absolute;
 			left: 10px;
@@ -676,13 +654,7 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 			border: 1px solid #cecece;
 			background: #fff;
 		}
-
 	} /* end .commentlist .vcard */
-
-
-	/* comment meta */
-	.comment-meta { a {} }
-	.commentmetadata { a {} }
 
 	/* comment content */
 	.comment_content {
@@ -711,9 +683,7 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 		&:focus {
 			opacity: 1;
 		}
-
 	} /* end .commentlist .comment-reply-link */
-
 } /* end .commentlist */
 
 /******************************************************************
@@ -775,7 +745,6 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 			width: 97.3%;
 			height: 150px;
 		}
-
 	}
 }
 
@@ -794,8 +763,6 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 *********************/
 
 #side {
-	margin-bottom: 1em;
-	
 	.widget-container {
 		padding-bottom: 2em;
 		
@@ -834,9 +801,11 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 				.entry-utility {
 					text-transform: none;
 					font-size: 0.85em;
-					color: @light-gray;
+					color: darken(@light-gray, 15%);
 					border-top: 1px solid #CCC;
 					padding-top: 10px;
+					
+					a { color: lighten(@theme-color, 15%); }
 				}
 			}
 		}
@@ -912,7 +881,7 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 .footer {
 	clear: both;
 	background-color: @gray;
-	padding: 2em 0;
+	padding: 2.5em 0;
 	
 	a { text-decoration: none; color: lighten(@footer-text, 20%); }
 	a:hover { color: @white; }
@@ -932,7 +901,7 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 	.widget-container {
 		padding-bottom: 2em;
 		color: @footer-text;
-		font-size: 1.24em;
+		font-size: 1.15em;
 
 		.widget-title {
 			color: @light-gray;
@@ -951,6 +920,7 @@ h3.comments-title, h3.reply-title { font-size: 1.85em; border-bottom: 1px dotted
 			margin: 0;
 		}
 		h4 {
+			font-size: 1.3em;
 			font-weight: normal;
 		}
 		input#s {

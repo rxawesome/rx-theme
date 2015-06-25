@@ -26,7 +26,7 @@
 				$photo = get_the_post_thumbnail($post->ID, 'bones-thumb-300');
 			}
 			?>
-			<a id="inline" class="fancybox" href="#<?the_ID();?>"><div class="photo column fourcol"><?=$photo;?></div></a>
+			<a id="inline" class="fancybox-inline" href="#<?the_ID();?>"><div class="photo column fourcol"><?=$photo;?></div></a>
 			<div style="display: none;"><div id="<?the_ID();?>" class="trainer preview">
 				<div class="photo fourcol"><?=$photo;?></div>
 				<div class="details eightcol">

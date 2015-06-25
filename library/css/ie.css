@@ -81,20 +81,28 @@ http://sachagreif.com/sass-color-variables/
 /*********************
 TYPOGRAPHY
 *********************/
+/*
 @font-face {
-  font-family: 'akzidenzmd';
-  src: url('../fontface-akzidenzmd/akzidenzgroteskbq-bdcnd-webfont.eot');
-  src: url('../fontface-akzidenzmd/akzidenzgroteskbq-bdcnd-webfont.eot?#iefix') format('embedded-opentype'), url('../fontface-akzidenzmd/akzidenzgroteskbq-bdcnd-webfont.woff') format('woff'), url('../fontface-akzidenzmd/akzidenzgroteskbq-bdcnd-webfont.ttf') format('truetype'), url('../fontface-akzidenzmd/akzidenzgroteskbq-bdcnd-webfont.svg#akzidenz-grotesk_bq_condensBd') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'akzidenzmd';
+    src: url('../fontface-akzidenzmd/akzidenzgroteskbq-bdcnd-webfont.eot');
+    src: url('../fontface-akzidenzmd/akzidenzgroteskbq-bdcnd-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fontface-akzidenzmd/akzidenzgroteskbq-bdcnd-webfont.woff') format('woff'),
+         url('../fontface-akzidenzmd/akzidenzgroteskbq-bdcnd-webfont.ttf') format('truetype'),
+         url('../fontface-akzidenzmd/akzidenzgroteskbq-bdcnd-webfont.svg#akzidenz-grotesk_bq_condensBd') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
-  font-family: 'bebas_neueregular';
-  src: url('../fontface-bebasneue/bebasneue-webfont.eot');
-  src: url('../fontface-bebasneue/bebasneue-webfont.eot?#iefix') format('embedded-opentype'), url('../fontface-bebasneue/bebasneue-webfont.woff') format('woff'), url('../fontface-bebasneue/bebasneue-webfont.ttf') format('truetype'), url('../fontface-bebasneue/bebasneue-webfont.svg#bebas_neueregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'bebas_neueregular';
+    src: url('../fontface-bebasneue/bebasneue-webfont.eot');
+    src: url('../fontface-bebasneue/bebasneue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fontface-bebasneue/bebasneue-webfont.woff') format('woff'),
+         url('../fontface-bebasneue/bebasneue-webfont.ttf') format('truetype'),
+         url('../fontface-bebasneue/bebasneue-webfont.svg#bebas_neueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
+*/
 @font-face {
   font-family: 'oldsansblackregular';
   src: url('../fontface-oldsansblack/oldsansblack-webfont.eot');
@@ -103,7 +111,7 @@ TYPOGRAPHY
   font-style: normal;
 }
 .title-font {
-  font-family: "akzidenzmd", "Trebuchet MS", helvetica, sans-serif;
+  font-family: "oldsansblackregular", "Trebuchet MS", helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 100;
@@ -247,6 +255,7 @@ BUTTONS
 .button.large,
 .button:visited.large {
   font-size: 1.5em;
+  padding: .4em 1em;
 }
 .blue-button,
 .blue-button:visited {
@@ -305,6 +314,9 @@ NAVIGATION STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+.Section#Slideshow {
+  display: block;
+}
 /* entry content */
 .entry-content {
   /* at this larger size, we can start to align images */
@@ -535,7 +547,7 @@ CONTENT STYLES
 .page-template-page-staff-list-php #trainer-list .trainer .details {
   width: 67%;
   display: inline-block;
-  font-size: 13px;
+  font-size: 14px;
 }
 .page-template-page-staff-list-php #trainer-list .trainer .details .title h2 {
   margin: 0;

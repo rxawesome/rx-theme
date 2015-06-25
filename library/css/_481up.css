@@ -20,6 +20,9 @@ NAVIGATION STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+.Section#Slideshow {
+  display: block;
+}
 /* entry content */
 .entry-content {
   /* at this larger size, we can start to align images */

@@ -19,7 +19,7 @@
 				</section> <!-- end search section -->
 			</article> <!-- end article -->
 
-		</div> <!-- end #main -->-->
+		</div> <!-- end #main -->
 		
 		<div id="side" class="fourcol last">
 			<? get_sidebar(); ?>
