@@ -4,6 +4,15 @@ if (function_exists('add_image_size')) {
 	add_image_size('promo-thumb', 330, 180, true); // fixed size, cropped - CHANGE CROP SIZE HERE
 }
 
+function get_promo_image($id, $size = "promo-thumb", $default = "") {
+	$img = '<img src="'. get_template_directory_uri() .'/images/'. $default .'" />';
+	if ( has_post_thumbnail($id) ) { 
+		$img = get_the_post_thumbnail($id, $size);
+	}
+	
+	return $img;
+}
+
 add_action("admin_init", "admin_init");
 function admin_init() {
 	//add_meta_box("promo_subtitle", "Subtitle", "promo_subtitle", "promotion", "normal", "high");
@@ -43,7 +52,7 @@ function promotion_register() {
 		'publicly_queryable' => true,
 		'show_ui' => true,
 		'query_var' => true,
-		'menu_icon' => get_stylesheet_directory_uri() . '/article16.png',
+		'menu_icon' => null,
 		'rewrite' => true,
 		'capability_type' => 'post',
 		'hierarchical' => true,

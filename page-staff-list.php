@@ -23,7 +23,7 @@
 			$accomplishments = get_field("accomplishments");
 			$photo = "";
 			if (has_post_thumbnail($post->ID)) { 
-				$photo = get_the_post_thumbnail($post->ID, 'promo-thumb');
+				$photo = get_the_post_thumbnail($post->ID, 'medium');
 			}
 			?><div class="trainer preview clearfix">
 				<div class="photo column"><?=$photo;?></div>

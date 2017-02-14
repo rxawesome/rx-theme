@@ -5,11 +5,11 @@
 		<? echo do_shortcode("[SlideDeck2 id=16 ress=1]"); ?>
 	</div>
 
-	<div id="FreeTrial" class="Section">
+	<div id="FreeIntro" class="Section">
 		<div class="wrap clearfix">
 			<div class="first twelvecol">
 				<h1 class="section-title">Schedule Your Free Trial</h1>
-				<p>Come and see what it’s all about. Contact us to schedule a time to come by and see our facility, 
+				<p>Come and see what it's all about. Contact us to schedule a time to come by and see our facility, 
 					learn more about us, and even get a 1-on-1 training session!</p>
 				<a href="/start-here/free-intro/" class="button black large">Sign Up Now <span>&#187;</span></a>
 			</div>
@@ -31,23 +31,54 @@
 					// Get Promo Information
 					$promo_title = $post->post_title;
 					$promo_excerpt = get_post_meta($post->ID, 'promo_excerpt', true);
-					$learn_more_url = get_post_meta($post->ID, 'learn_more_url', true);
-					$learn_more_label = get_post_meta($post->ID, 'learn_more_label', true);
-					$promo_photo = "";
-					if (has_post_thumbnail($post->ID)) { 
-						$promo_photo = get_the_post_thumbnail($post->ID, 'promo-thumb');
-					}
+					$promo_url = get_post_meta($post->ID, 'learn_more_url', true);
+					$promo_label = get_post_meta($post->ID, 'learn_more_label', true);
+					$promo_photo = get_promo_image($post->ID, "", "");
 		
-				?><div class="promotion column fourcol top-margin">
-					<div class="title">
-						<h2 class="entry-title"><?=$promo_title;?></h2>
+				?><div class="promotion column top-margin">
+					<a href="<?=$promo_url;?>">
+					<div class="Box">
+						<div class="Photo"><?=$promo_photo;?></div>
+						<div class="Overlay">
+							<h2 class="entry-title"><b><?=$promo_title;?></b> <span>&#187;</span></h2>
+						</div>
 					</div>
-					<div class="excerpt">
-						<p><?=$promo_excerpt;?></p>
-					</div>
-					<a href="<?=$learn_more_url; ?>" class="button white"><?=$learn_more_label;?> <span>&#187;</span></a>
+					</a>
 				</div>
 				<?endwhile; wp_reset_query(); ?>
+			</div>
+		</div>
+	</div>
+	
+	<div id="Testimonials" class="Section">
+		<div class="wrap clearfix">
+			<div class="first twelvecol">
+				<h1 class="section-title">What Our Members Are Saying</h1>
+			</div>
+			<div>
+				<?
+				$a_author = array();
+				query_posts(array('post_type'=>'story'));
+				while (have_posts()) : the_post();
+					$a_author[$post->post_title] = get_the_post_thumbnail($post->ID, 'thumbnail');
+					if ( get_post_meta($post->ID, 'reason_for_joining', true) <> "" )
+						$oStory[] = array("author"=>$post->post_title, "text"=>get_post_meta($post->ID, 'reason_for_joining', true));
+					if ( get_post_meta($post->ID, 'enjoy_about_membership', true) <> "" )
+						$oStory[] = array("author"=>$post->post_title, "text"=>get_post_meta($post->ID, 'enjoy_about_membership', true));
+					if ( get_post_meta($post->ID, 'learn_about_yourself', true) <> "" )
+						$oStory[] = array("author"=>$post->post_title, "text"=>get_post_meta($post->ID, 'learn_about_yourself', true));
+					if ( get_post_meta($post->ID, 'advice_to_prospect', true) <> "" )
+						$oStory[] = array("author"=>$post->post_title, "text"=>get_post_meta($post->ID, 'advice_to_prospect', true));
+				endwhile;
+				
+				$count = 1; shuffle($oStory);
+				foreach ( $oStory as $o ) {
+					if ($count > 3) break;?>
+					<div class="story column fourcol top-margin">
+						<p><div class="Photo"><? echo $a_author[$o["author"]];?></div> <b><?=$o["author"];?> -</b> <?=$o["text"];?></p>
+					</div>
+					<? $count++;
+				} wp_reset_query(); ?>
 			</div>
 		</div>
 	</div>

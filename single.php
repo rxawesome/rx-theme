@@ -17,6 +17,8 @@
 
 				<section class="entry-featured clearfix" itemprop="articleBody">
 					<? the_post_thumbnail('bones-thumb-600'); ?>
+					<? $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'bones-thumb-600' ); ?>
+					<meta property="og:image" content="<? echo esc_attr($thumbnail_src[0]); ?>"/>
 				</section> <!-- end article section -->
 				
 				<section class="entry-content clearfix" itemprop="articleBody">

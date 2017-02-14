@@ -101,6 +101,26 @@ TYPOGRAPHY
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'gotham_boldregular';
+    src: url('../fontface-gothambold/gotham-bold-webfont.eot');
+    src: url('../fontface-gothambold/gotham-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fontface-gothambold/gotham-bold-webfont.woff') format('woff'),
+         url('../fontface-gothambold/gotham-bold-webfont.ttf') format('truetype'),
+         url('../fontface-gothambold/gotham-bold-webfont.svg#gotham_boldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'open_sans_condensedbold';
+    src: url('../fontface-oldsanscondbold/OpenSans-CondBold-webfont.eot');
+    src: url('../fontface-oldsanscondbold/OpenSans-CondBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fontface-oldsanscondbold/OpenSans-CondBold-webfont.woff') format('woff'),
+         url('../fontface-oldsanscondbold/OpenSans-CondBold-webfont.ttf') format('truetype'),
+         url('../fontface-oldsanscondbold/OpenSans-CondBold-webfont.svg#oldsanscondbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 */
 @font-face {
     font-family: 'oldsansblackregular';
@@ -249,10 +269,10 @@ BUTTONS
 	border: 1px solid darken(@bones-pink, 13%);
 	border-top-color: darken(@bones-pink, 7%);
 	border-left-color: darken(@bones-pink, 7%);
-	padding: .5em 1em;
+	padding: .5em .8em;
 	color: @white;
 	display: inline-block;
-	font-size: 1.2em;
+	font-size: 1.4em;
 	font-weight: bold;
 	text-decoration: none;
 	text-shadow: 0 1px rgba(0,0,0, .75);
@@ -263,14 +283,6 @@ BUTTONS
 	.border-radius(4px);
 	.css-gradient(@bones-pink,darken(@bones-pink, 5%));
 
-	&:hover, &:focus {
-		color: @white;
-		border: 1px solid darken(@bones-pink, 13%);
-		border-top-color: darken(@bones-pink, 20%);
-	 	border-left-color: darken(@bones-pink, 20%);
-		.css-gradient(darken(@bones-pink, 5%),darken(@bones-pink, 10%));
-	}
-
 	span {
 		font-family: "Georgia";
 		font-weight: bold;
@@ -278,8 +290,8 @@ BUTTONS
 	}
 	
 	&.large {
-		font-size: 1.5em;
-		padding: .4em 1em;
+		font-size: 1.8em;
+		padding: .4em .8em;
 	}
 }
 
