@@ -61,7 +61,7 @@ http://0to255.com/
 @alert-green:       #e6efc2;
 @alert-blue:        #d5edf8;
 
-@black:             #202020;
+@black:             #040707;
 @gray:				#383838;
 @light-gray:		#DEDEDE;
 @white:             #FFFFFF;
@@ -101,8 +101,40 @@ TYPOGRAPHY
     font-weight: normal;
     font-style: normal;
 }
-*/
 @font-face {
+    font-family: 'gotham_boldregular';
+    src: url('../fontface-gothambold/gotham-bold-webfont.eot');
+    src: url('../fontface-gothambold/gotham-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fontface-gothambold/gotham-bold-webfont.woff') format('woff'),
+         url('../fontface-gothambold/gotham-bold-webfont.ttf') format('truetype'),
+         url('../fontface-gothambold/gotham-bold-webfont.svg#gotham_boldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}*/
+@font-face {
+    font-family: 'open_sans_condensedbold';
+    src: url('../fontface-oldsanscondbold/OpenSans-CondBold-webfont.eot');
+    src: url('../fontface-oldsanscondbold/OpenSans-CondBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fontface-oldsanscondbold/OpenSans-CondBold-webfont.woff') format('woff'),
+         url('../fontface-oldsanscondbold/OpenSans-CondBold-webfont.ttf') format('truetype'),
+         url('../fontface-oldsanscondbold/OpenSans-CondBold-webfont.svg#oldsanscondbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'jersey_m54regular';
+    src: url('../fontface-jerseym54/jersey_m54-webfont.eot');
+    src: url('../fontface-jerseym54/jersey_m54-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fontface-jerseym54/jersey_m54-webfont.woff2') format('woff2'),
+         url('../fontface-jerseym54/jersey_m54-webfont.woff') format('woff'),
+         url('../fontface-jerseym54/jersey_m54-webfont.ttf') format('truetype'),
+         url('../fontface-jerseym54/jersey_m54-webfont.svg#jersey_m54regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*@font-face {
     font-family: 'oldsansblackregular';
     src: url('../fontface-oldsansblack/oldsansblack-webfont.eot');
     src: url('../fontface-oldsansblack/oldsansblack-webfont.eot?#iefix') format('embedded-opentype'),
@@ -111,19 +143,20 @@ TYPOGRAPHY
          url('../fontface-oldsansblack/oldsansblack-webfont.svg#oldsansblackregular') format('svg');
     font-weight: normal;
     font-style: normal;
-}
+}*/
 
 @sans-serif:	"Trebuchet MS", helvetica, sans-serif; 
 @serif:			"Georgia", Cambria, Times New Roman, Times, serif; 
-@title-font:	"oldsansblackregular", @sans-serif;
+@title-font:	"open_sans_condensedbold", @sans-serif;
 
 .title-font {
 	font-family: @title-font;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	font-weight: 100;
+	font-weight: bold;
 	-webkit-font-smoothing: antialiased;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+	letter-spacing: 0px;
 }
 
 /* 
@@ -249,10 +282,10 @@ BUTTONS
 	border: 1px solid darken(@bones-pink, 13%);
 	border-top-color: darken(@bones-pink, 7%);
 	border-left-color: darken(@bones-pink, 7%);
-	padding: .5em 1em;
+	padding: .5em .8em;
 	color: @white;
 	display: inline-block;
-	font-size: 1.2em;
+	font-size: 1.4em;
 	font-weight: bold;
 	text-decoration: none;
 	text-shadow: 0 1px rgba(0,0,0, .75);
@@ -263,14 +296,6 @@ BUTTONS
 	.border-radius(4px);
 	.css-gradient(@bones-pink,darken(@bones-pink, 5%));
 
-	&:hover, &:focus {
-		color: @white;
-		border: 1px solid darken(@bones-pink, 13%);
-		border-top-color: darken(@bones-pink, 20%);
-	 	border-left-color: darken(@bones-pink, 20%);
-		.css-gradient(darken(@bones-pink, 5%),darken(@bones-pink, 10%));
-	}
-
 	span {
 		font-family: "Georgia";
 		font-weight: bold;
@@ -278,8 +303,8 @@ BUTTONS
 	}
 	
 	&.large {
-		font-size: 1.5em;
-		padding: .4em 1em;
+		font-size: 1.8em;
+		padding: .4em .8em;
 	}
 }
 

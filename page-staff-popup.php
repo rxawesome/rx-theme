@@ -3,14 +3,28 @@
  Template Name: Staff Popup
  */
 
- get_header(); ?>
+ get_header(); global $post; ?>
  
 <div id="content">
 	<div id="inner-content" class="wrap clearfix">
-		
-		<div id="main" class="twelvecol first clearfix" role="main">
+		<?php
+		$hideSidebar = get_field('hide_sidebar', $post->ID) == 'yes' ? TRUE : FALSE;
+		$mainClass = $hideSidebar ? 'twelvecol' : 'eightcol'; ?>
+		<div id="main" class="<?php echo $mainClass; ?> first clearfix" role="main">
 			<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 			<div id="trainer-list"><? 
+			$columns = get_field('columns', $post->ID);
+			$columnClasses = array(
+				1 => 'onecol',
+				2 => 'twocol',
+				5 => 'twocol twohalfcol', // five columns layout
+				3 => 'threecol',
+				4 => 'fourcol',
+				6 => 'sixcol',
+				12 => 'twelvecol'				
+			);
+			$columnClass = $columns == 5 ? $columnClasses[5] : $columnClasses[12 / $columns];
+
 			// Fetch All the Trainer Pages
 			$index = 0;
 			query_posts(array('post_type'=>'staff', 'orderby'=>'menu_order', 'order'=>'ASC'));
@@ -23,12 +37,28 @@
 			$accomplishments = get_field("accomplishments");
 			$photo = "";
 			if (has_post_thumbnail($post->ID)) { 
-				$photo = get_the_post_thumbnail($post->ID, 'bones-thumb-300');
+				$photo = get_the_post_thumbnail_url($post->ID, 'bones-thumb-300');
 			}
 			?>
-			<a id="inline" class="fancybox-inline" href="#<?the_ID();?>"><div class="photo column fourcol"><?=$photo;?></div></a>
+			
+			<div class="column <?php echo $columnClass; ?>" style="<?php echo $index%$columns == 0 ? 'margin-left: 0px; clear: left;' : ''; ?>">
+				<div class="photo"><a id="inline" class="fancybox" href="#<?the_ID();?>"><img src="<?=$photo;?>" width="100%"></a></div>
+				<div class="info">
+					<h3><a id="inline" class="fancybox" href="#<?the_ID();?>"><?=$name;?> <span>&#187;</span></a></h3>
+					<p><?=$position;?></p>
+				</div>
+			</div>
+			
 			<div style="display: none;"><div id="<?the_ID();?>" class="trainer preview">
-				<div class="photo fourcol"><?=$photo;?></div>
+				<div class="fourcol">
+					<div class="photo"><img src="<?=$photo?>" width="300"></div>
+					<?php if($qualifications):?>
+						<div class="qualifications"><h4>Qualifications:</h4><?php echo $qualifications; ?></div>
+					<?php endif; ?>
+					<?php if($accomplishments):?>
+						<div class="accomplishments"><h4>Accomplishments</h4><?php echo $accomplishments; ?></div>
+					<?php endif; ?>
+				</div>
 				<div class="details eightcol">
 					<div class="title">
 						<h2><?=$name;?></h2>
@@ -40,14 +70,14 @@
 					
 					echo apply_filters('the_content', $post->post_content); 
 					
-					if ( !empty($qualifications) ) {
+					/*if ( !empty($qualifications) ) {
 						?><h4>Qualifications:</h4><?
 						echo $qualifications;
 					}
 					if ( !empty($accomplishments) ) {
 						?><h4>Accomplishments:</h4><?
 						echo $accomplishments;
-					}
+					}*/
 
 					?>
 				</div><!-- /.details -->
@@ -62,6 +92,12 @@
 			?>
 			</div><!-- /#trainer-list -->
 		</div> <!-- end #main -->
+
+		<?php if (!$hideSidebar): ?>
+		<div id="side" class="fourcol last">
+			<? get_sidebar(); ?>
+		</div>
+		<?php endif; ?>
 
 	</div> <!-- end #inner-content -->
 </div> <!-- end #content -->

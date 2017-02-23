@@ -1,7 +1,7 @@
 /*
   Theme Name: RX - Starter Theme
-  Theme URI: http://www.sitesasrx.com
-  Author: SitesAsRx
+  Theme URI: http://poweredbyawesome.com
+  Author: Powered by Awesome
   Version: 1.0
 */
 
@@ -9,8 +9,8 @@
 Theme Colors
 *********************/
 
-@theme-color:	#2873b5;
-@theme-accent:	#2873b5;
+@theme-color:	#1d83c6;
+@theme-accent:	#1d83c6;
 @link-color:	@theme-color;
 @link-hover:	darken(@link-color, 9%);
 
@@ -26,6 +26,11 @@ Theme Colors
 		background-color: @black;
 		background-image: none;
 		border-color: @black;
+	}
+	
+	&.accent {
+		background-color: @theme-accent;
+		border-color: @theme-accent;
 	}
 	
 	&.black {
@@ -44,9 +49,104 @@ Theme Colors
 Homepage Layout
 *********************/
 
+.header {
+	#topbar {
+		background: @theme-color;
+		
+		#contact {
+			ul {
+				li {
+					a {
+						color: #003355;
+						font-size: 1.0em;
+						i { color: #003355; }
+						opacity: .8;
+						
+						&:hover { opacity: 1; }
+					}
+				}
+			}
+		}
+
+		#social {
+			display: none;
+		}
+	}
+	
+	#inner-header {
+		background: @black;
+		margin: 4px 0px;
+	}
+	
+	nav {
+		background: @black;
+		
+		.ubermenu-responsive-toggle {
+			font-size: 1.5em;
+			color: @white;
+
+			&:hover {
+				color: @theme-accent;
+			}
+		}
+
+		.ubermenu {
+			.ubermenu-nav {
+				float: right;
+				> li {
+					> a {
+						line-height: 1.7em;
+						padding: 20px !important;
+						color: @white;
+						
+						span {
+							font-size: 1.25em;
+							text-transform: uppercase;
+						}
+						
+						-webkit-box-shadow: none !important;
+						-moz-box-shadow: none !important;
+						box-shadow: none !important;
+					}
+					
+					&.ubermenu-has-submenu-drop {
+						> a {
+							padding-right: 25px !important;
+						}
+					}
+
+					&.ubermenu-current-menu-parent,
+					&.ubermenu-current-menu-ancestor,
+					&.ubermenu-current-menu-item {
+						> a {
+							color: @theme-accent !important;
+						}
+					}
+					
+					.ubermenu-submenu {
+						padding: 4px 0;
+
+						li {
+							a {
+								padding: 12px 20px;
+
+								span {
+									font-size: 1.15em;
+									text-transform: uppercase;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 
 .Section {
-	padding: 40px 0;
+	margin-top: 4px;
+	padding: 80px 0;
 	
 	.twelvecol {
 		text-align: center;
@@ -63,28 +163,221 @@ Homepage Layout
 		}
 	}
 	
+	.button {
+		margin: 0;
+	}
+	
 	&#Slideshow {
 		padding: 0;
-		display: none;
 	}
 	
 	&#Tagline {
 		
 	}
 
-	&#FreeIntro {
-		
-		.button {
-			margin-bottom: 0;
+	&#FreeTrial {
+		background: url(../../images/background-free-trial.jpg) no-repeat;
+		background-size: cover;
+		background-position: center center;
+		color: white;
+
+		.section-title {
+			font-size: 4em;
 		}
 	}
 	
 	&#Promotions {
+
+		background: #e7e7e7;
 		
+		.promotion {
+			height: 222px;
+
+			text-align: center;
+
+			h2 {
+				font-size: 1em;
+			}
+
+			a {
+				color: white;
+				display: table;
+				font-family: 'open_sans_condensedbold';
+				font-size: 2.5em;
+				text-decoration: none;
+				text-transform: uppercase;
+				transform: translateY(50%);
+				text-shadow: 0px 0px 5px black;
+				width: 100%;
+				word-spacing: 99999px;
+				line-height: 1.1em;
+
+				&:after {
+					background: @theme-color;
+					width: 120px;
+					height: 4px;
+					position: absolute;
+					bottom: -10px;
+					left: 50%;
+					margin-left: -60px;
+					content: '';
+					box-shadow: 0px 0px 5px 0px black;
+				}
+			}
+		}
+	}
+	
+	&#Testimonials {
+		background: url(../../images/background-testimonials.jpg) repeat;
+		
+		.story {
+			background: rgba(0, 0, 0, 0.8);
+			padding: 20px;
+			color: white;
+			font-size: 14px;
+			text-align: left;
+			display: inline-block;
+			
+			.Photo { 
+				float: left; 
+				width: 120px;
+				height: 120px;
+				margin-top: 2px; 
+				margin-right: 15px; 
+				background: url(../../library/images/bg-person.jpg) no-repeat; 
+				background-size: cover; 
+				
+				img { 
+					width: 100%;
+					height: auto;
+				}
+			}
+			
+			p {
+				text-align: left;
+				margin: 0;
+				color: @white;
+			}
+			
+			&:nth-child(2n+1) {
+				clear: both;
+			}
+
+			strong {
+				font-family: 'open_sans_condensedbold';
+				font-size: 1.25em;
+			}
+		}
 	}
 }
 
+.footer {
 
+	padding-bottom: 1em;
+    padding-top: 4em;
+
+	.widget-container {
+		.widget-title {
+			font-size: 1.5em;
+			border-bottom: 0px;
+		}
+	}
+	ul {
+		li {
+			min-width: auto !important;
+			border-left: 1px solid #ccc;
+			line-height: 0em;
+			padding: 0px 10px;
+			display: inline-block;
+
+			&:first-child {
+				border-left: 0px;
+				padding-left: 0px;
+			}
+
+			a {
+				border-top: 0px !important;
+				text-transform: initial;
+				font-family: @sans-serif;
+				font-size: 0.8em;
+				font-weight: bold;
+				color: #cccccc;
+				padding: 5px 0px !important;
+				display: inline-block !important;
+			}
+		}
+	}
+}
+
+#bottombar {
+	margin-top: 4px;
+}
+
+.trainer {
+	&.preview {
+		.details {
+			
+			h4 {
+				margin-top: 20px;
+			}
+
+			.title {
+
+				padding-bottom: 15px;
+				border-bottom: 1px solid #DDD;
+				margin-bottom: 15px;
+
+				h2 {
+					font-size: 2.5em;
+				}
+
+				h3 {
+					font-size: 1.7em;
+				}
+			}
+		}
+	} 
+}
+/*
+#side {
+	.widget-container {
+		
+		&.widget_subpages {
+			> ul {
+				background: @black;
+				
+				> li {
+					border-top: 1px solid lighten(@black, 20%);
+
+					ul {
+						li, li:first-child {
+							border-top: 1px solid lighten(@black, 20%); 
+						}
+					}
+					
+					a:hover,
+					&.current_page_item > a {
+						color: @theme-color;	
+					}
+				}
+				
+				a {
+					color: @white;
+				}
+			}
+		}
+		
+		&.advanced_recent_posts_widget {
+			ul {
+				li {
+					border-bottom: 1px dotted @light-gray;
+					&:first-child { border-top: 1px dotted @light-gray; }
+				}
+			}
+		}
+	}
+}
+*/
 
 
 
@@ -97,20 +390,21 @@ Larger Mobile Device
 
 	.Section {
 		.twelvecol {
-			.section-title { }
+			.section-title {
+				font-size: 3.5em;
+			}
 			
 			p { }
+		}
+		
+		&#Slideshow {
 		}
 		
 		&#Tagline {
 			
 		}
-		
-		&#Slideshow {
-			display: block;
-		}
 	
-		&#FreeIntro {
+		&#FreeTrial {
 			
 		}
 		
@@ -127,13 +421,46 @@ Tablet & Up
 *********************/
 
 @media only screen and (min-width: 768px) {
+	.header {
+		#topbar {
+			#social {
+				display: inline-block;
+			}
+		}
+
+		nav {
+			margin-top: 35px;
+		}
+	}
+
+	.footer {
+		.right {
+			.widget-container {
+				.widget-title {
+					text-align: right;
+				}
+			}
+
+			.textwidget {
+				text-align: right;
+
+				ul {
+					li {
+						&:last-child {
+							padding-right: 0px;
+						}
+					}
+				}
+			}
+		}
+	}
 
 	.Section {
 		.twelvecol {
 			.section-title { }
 			
 			p {
-				padding: 0 100px;
+				padding: 0 150px;
 			}
 		}
 		
@@ -145,12 +472,39 @@ Tablet & Up
 			
 		}
 	
-		&#FreeIntro {
+		&#FreeTrial {
 			
 		}
 		
 		&#Promotions {
 			
+		}
+
+		&#Testimonials {
+
+			.twelvecol {
+				p {
+					padding: 0 315px;
+				}
+			}
+		}
+	}
+
+	#trainer-list {
+		.sixcol {
+			width: 49.12%;
+		}
+		.fourcol {
+			width: 32.16%
+		}
+		.threecol {
+			width: 23.68%;
+		}
+		.twocol {
+			width: 15.2%;
+		}
+		.twohalfcol {
+			width: 18.59%;
 		}
 	}
 

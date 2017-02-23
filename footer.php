@@ -1,15 +1,11 @@
 	<footer class="footer" role="contentinfo">
 		<div id="inner-footer" class="wrap clearfix">
-			<div class="fourcol">
+			<div class="eightcol">
 				<? dynamic_sidebar('first-footer-widget-area'); ?>
 			</div><!-- /.column -->
 
-			<div class="fourcol">
+			<div class="fourcol right">
 				<? dynamic_sidebar('second-footer-widget-area'); ?>
-			</div><!-- /.column -->
-
-			<div class="fourcol">
-				<? dynamic_sidebar('third-footer-widget-area'); ?>
 			</div><!-- /.column -->
 		</div> <!-- end #inner-footer -->
 	</footer> <!-- end footer -->
