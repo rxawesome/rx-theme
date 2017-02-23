@@ -19,9 +19,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-	
-	<!-- Font Awesome Icons -->
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 	<!-- wordpress head functions -->
 	<?php wp_head(); ?>
@@ -45,17 +42,17 @@ $blog_name = esc_attr(get_bloginfo('name', 'display'));
 		</div>
 
 		<div id="inner-header" class="clearfix">
-			<div id="logo">
+			<div id="logo" class="threecol first">
 				<div class="wrap">
 					<a href="<?=$home_url; ?>" title="<?=$blog_name; ?>" rel="home"><? echo do_shortcode("[awesome_branding]"); ?></a>
 				</div>
 			</div>
 
-			<nav role="navigation" class="clearfix">
+			<nav role="navigation" class="ninecol last">
 				<div class="inner-nav wrap">
 					<? bones_main_nav(); ?>
 				</div>
 			</nav>
-		</div>
+		</div> <!-- end #inner-header -->
 
 	</header> <!-- end header -->

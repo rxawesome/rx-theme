@@ -9,8 +9,8 @@
 Theme Colors
 *********************/
 
-@theme-color:	#2873b5;
-@theme-accent:	#2873b5;
+@theme-color:	#1d83c6;
+@theme-accent:	#1d83c6;
 @link-color:	@theme-color;
 @link-hover:	darken(@link-color, 9%);
 
@@ -67,6 +67,10 @@ Homepage Layout
 				}
 			}
 		}
+		
+		#social {
+			display: none;
+		}
 	}
 	
 	#inner-header {
@@ -87,6 +91,8 @@ Homepage Layout
 
 		.ubermenu {
 			.ubermenu-nav {
+				float: right;
+				
 				> li {
 					> a {
 						line-height: 1.7em;
@@ -94,7 +100,7 @@ Homepage Layout
 						color: @white;
 						
 						span {
-							font-size: 2.25em;
+							font-size: 1.5em;
 							text-transform: uppercase;
 						}
 						
@@ -125,7 +131,7 @@ Homepage Layout
 								padding: 12px 20px;
 
 								span {
-									font-size: 1.85em;
+									font-size: 1.3em;
 									text-transform: uppercase;
 								}
 							}
@@ -163,18 +169,26 @@ Homepage Layout
 	
 	&#Slideshow {
 		padding: 0;
-		display: none;
 	}
 	
 	&#Tagline {
 		
 	}
 
-	&#FreeIntro {
-		
+	&#FreeTrial {
+		background: url("../../images/bg-free-intro.jpg") no-repeat;
+		background-position: center center;
+		background-size: cover;
+		color: white;
+
+		.section-title {
+			font-size: 4em;
+		}
 	}
 	
 	&#Promotions {
+
+		background: #e7e7e7;
 		
 		.Box {
 			position: relative;
@@ -202,6 +216,7 @@ Homepage Layout
 						display: block;
 						font-size: 1.35em;
 					}
+
 				}
 			}
 		}
@@ -209,6 +224,9 @@ Homepage Layout
 	
 	&#Testimonials {
 		.story {
+			background: rgba(0, 0, 0, 0.8);
+			padding: 20px;
+			color: white;
 			font-size: 14px;
 			text-align: left;
 			display: inline-block;
@@ -228,16 +246,63 @@ Homepage Layout
 				}
 			}
 			
-			p { text-align: left; margin: 0; color: @white; }
+			&:nth-child(3n+1) { clear: both; }  // for 3 column layout
+			//&:nth-child(2n+1) { clear: both; }	// for 2 column layout
 			
-			&:nth-child(3n+1) {
-				clear: both;
+			p {
+				text-align: left;
+				margin: 0;
+				color: @white;
+			}
+
+			strong {
+				font-family: 'open_sans_condensedbold';
+				font-size: 1.25em;
 			}
 		}
 	}
 }
 
+.footer {
+	padding-bottom: 1em;
+    padding-top: 4em;
 
+	.widget-container {
+		.widget-title {
+			font-size: 1.5em;
+			border-bottom: 0px;
+		}
+	}
+}
+
+#bottombar {
+	margin-top: 4px;
+}
+
+.trainer {
+	&.preview {
+		.details {
+			
+			h4 {
+				margin-top: 20px;
+			}
+
+			.title {
+				padding-bottom: 15px;
+				border-bottom: 1px solid #DDD;
+				margin-bottom: 15px;
+
+				h2 {
+					font-size: 2.5em;
+				}
+
+				h3 {
+					font-size: 1.7em;
+				}
+			}
+		}
+	} 
+}
 /*
 #side {
 	.widget-container {
@@ -290,7 +355,9 @@ Larger Mobile Device
 
 	.Section {
 		.twelvecol {
-			.section-title { }
+			.section-title {
+				font-size: 3.5em;
+			}
 			
 			p { }
 		}
@@ -303,7 +370,7 @@ Larger Mobile Device
 			
 		}
 	
-		&#FreeIntro {
+		&#FreeTrial {
 			
 		}
 		
@@ -320,13 +387,46 @@ Tablet & Up
 *********************/
 
 @media only screen and (min-width: 768px) {
+	.header {
+		#topbar {
+			#social {
+				display: inline-block;
+			}
+		}
+
+		nav {
+			margin-top: 35px;
+		}
+	}
+
+	.footer {
+		.right {
+			.widget-container {
+				.widget-title {
+					text-align: right;
+				}
+			}
+
+			.textwidget {
+				text-align: right;
+
+				ul {
+					li {
+						&:last-child {
+							padding-right: 0px;
+						}
+					}
+				}
+			}
+		}
+	}
 
 	.Section {
 		.twelvecol {
 			.section-title { }
 			
 			p {
-				padding: 0 100px;
+				padding: 0 150px;
 			}
 		}
 		
@@ -338,12 +438,39 @@ Tablet & Up
 			
 		}
 	
-		&#FreeIntro {
+		&#FreeTrial {
 			
 		}
 		
 		&#Promotions {
 			
+		}
+
+		&#Testimonials {
+
+			.twelvecol {
+				p {
+					padding: 0 315px;
+				}
+			}
+		}
+	}
+
+	#trainer-list {
+		.sixcol {
+			width: 49.12%;
+		}
+		.fourcol {
+			width: 32.16%
+		}
+		.threecol {
+			width: 23.68%;
+		}
+		.twocol {
+			width: 15.2%;
+		}
+		.twohalfcol {
+			width: 18.59%;
 		}
 	}
 

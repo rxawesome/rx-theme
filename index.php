@@ -2,16 +2,16 @@
 
 <div id="content">
 	<div id="Slideshow" class="Section">
-		<? echo do_shortcode("[SlideDeck2 id=16 ress=1]"); ?>
+		<? echo do_shortcode('[rev_slider alias="homepage"]'); ?>
 	</div>
 
 	<div id="FreeIntro" class="Section">
 		<div class="wrap clearfix">
 			<div class="first twelvecol">
-				<h1 class="section-title">Schedule Your Free Trial</h1>
+				<h1 class="section-title">Schedule A Free Intro</h1>
 				<p>Come and see what it's all about. Contact us to schedule a time to come by and see our facility, 
 					learn more about us, and even get a 1-on-1 training session!</p>
-				<a href="/start-here/free-intro/" class="button black large">Sign Up Now <span>&#187;</span></a>
+				<a href="/start-here/" class="button black large">Sign Up Now <span>&#187;</span></a>
 			</div>
 		</div>
 	</div>
@@ -20,12 +20,10 @@
 		<div class="wrap clearfix">
 			<div class="first twelvecol">
 				<h1 class="section-title">Fitness Programs to Fit Your Needs</h1>
-				<p>Not ready for CrossFit but still want to get in shape and have fun? Take a look at the different 
-					fitness classes we offer and check out the one that fits you best.</p>
 			</div>
 			<div>
 				<?
-				$index=1;
+				$index = 1;
 				query_posts(array('post_type'=>'promotion', 'posts_per_page'=>3, 'orderby'=>'menu_order', 'order'=>'ASC'));
 				while (have_posts()) : the_post();
 					// Get Promo Information
