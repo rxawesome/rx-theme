@@ -13,6 +13,7 @@ Theme Colors
 @theme-accent:	#1d83c6;
 @link-color:	@theme-color;
 @link-hover:	darken(@link-color, 9%);
+@black:			#111;
 
 //BUTTONS
 .button, .button:visited {
@@ -21,11 +22,13 @@ Theme Colors
 	background-image: none;
 	border-radius: 0px;
 	.title-font;
+	color: @white;
 
 	&:hover {
 		background-color: @black;
 		background-image: none;
 		border-color: @black;
+		color: @white;
 	}
 	
 	&.accent {
@@ -74,7 +77,7 @@ Homepage Layout
 	}
 	
 	#inner-header {
-		background: @gray;
+		background: @gray; // Generally needs to be overriden
 	}
 	
 	nav {
@@ -111,7 +114,7 @@ Homepage Layout
 					
 					&.ubermenu-has-submenu-drop {
 						> a {
-							padding-right: 25px !important;
+							padding-right: 20px !important;
 						}
 					}
 
@@ -119,16 +122,16 @@ Homepage Layout
 					&.ubermenu-current-menu-ancestor,
 					&.ubermenu-current-menu-item {
 						> a {
-							color: @theme-accent !important;
+							color: @theme-color !important;
 						}
 					}
 					
 					.ubermenu-submenu {
-						padding: 4px 0;
+						padding: 8px 0;
 
 						li {
 							a {
-								padding: 12px 20px;
+								padding: 8px 20px;
 
 								span {
 									font-size: 1.3em;
@@ -145,20 +148,21 @@ Homepage Layout
 
 
 .Section {
-	margin-top: 2px;
-	padding: 80px 0;
+	margin-top: 0px;
+	padding: 100px 0;
 	
 	.twelvecol {
 		text-align: center;
 
 		.section-title {
 			margin: 0;
+			font-size: 3.0em; // Generally needs to be overriden
 			line-height: 1.1em;
 			text-align: center;
 		}
 		
 		p {
-			font-size: 18px;
+			font-size: 20px;
 			text-align: center;
 		}
 	}
@@ -182,12 +186,11 @@ Homepage Layout
 		color: white;
 
 		.section-title {
-			font-size: 4em;
+			font-size: 4em; // Generally needs to be overriden
 		}
 	}
 	
 	&#Promotions {
-
 		background: #e7e7e7;
 		
 		.Box {
@@ -223,6 +226,7 @@ Homepage Layout
 	}
 	
 	&#Testimonials {
+		
 		.story {
 			background: rgba(0, 0, 0, 0.8);
 			padding: 20px;
@@ -256,7 +260,7 @@ Homepage Layout
 			}
 
 			strong {
-				font-family: 'open_sans_condensedbold';
+				.title-font();
 				font-size: 1.25em;
 			}
 		}
@@ -264,15 +268,8 @@ Homepage Layout
 }
 
 .footer {
-	padding-bottom: 1em;
-    padding-top: 4em;
 
-	.widget-container {
-		.widget-title {
-			font-size: 1.5em;
-			border-bottom: 0px;
-		}
-	}
+
 }
 
 #bottombar {
@@ -356,7 +353,6 @@ Larger Mobile Device
 	.Section {
 		.twelvecol {
 			.section-title {
-				font-size: 3.5em;
 			}
 			
 			p { }
@@ -423,7 +419,9 @@ Tablet & Up
 
 	.Section {
 		.twelvecol {
-			.section-title { }
+			.section-title { 
+				font-size: 4em; // Generally needs to be overriden
+			}
 			
 			p {
 				padding: 0 150px;
@@ -439,7 +437,9 @@ Tablet & Up
 		}
 	
 		&#FreeTrial {
-			
+			.section-title {
+				font-size: 5.5em; // Generally needs to be overriden
+			}
 		}
 		
 		&#Promotions {
@@ -450,27 +450,9 @@ Tablet & Up
 
 			.twelvecol {
 				p {
-					padding: 0 315px;
+					
 				}
 			}
-		}
-	}
-
-	#trainer-list {
-		.sixcol {
-			width: 49.12%;
-		}
-		.fourcol {
-			width: 32.16%
-		}
-		.threecol {
-			width: 23.68%;
-		}
-		.twocol {
-			width: 15.2%;
-		}
-		.twohalfcol {
-			width: 18.59%;
 		}
 	}
 

@@ -41,7 +41,7 @@ $blog_name = esc_attr(get_bloginfo('name', 'display'));
 			</div>
 		</div>
 
-		<div id="inner-header" class="clearfix">
+		<div id="inner-header" class="wrap clearfix">
 			<div id="logo" class="threecol first">
 				<div class="wrap">
 					<a href="<?=$home_url; ?>" title="<?=$blog_name; ?>" rel="home"><? echo do_shortcode("[awesome_branding]"); ?></a>
