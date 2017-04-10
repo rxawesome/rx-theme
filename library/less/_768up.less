@@ -62,21 +62,37 @@ CONTENT STYLES
 .page-children {
 	.entry-feature {
 		float: left;
+		
+		.Photo {
+			width: 250px;
+			padding-bottom: 0;
+			
+			img { max-width: 100%; height: auto; }
+		}
 	}
 	
 	.entry-preview {
-		margin-left: 320px;
+		margin-left: 270px;
+		padding-top: 8px;
+			
+		.entry-content {
+			display: block;
+		}
 	}
-}	
-	
-.page-template-page-staff-list-php {
-	#trainer-list {
-		
+}
+
+.page-template-page-staff-popup-php {
+	#trainer-list {	
 		.sixcol { 	width: 49.12%; }
 		.fourcol { 	width: 32.16% }
 		.threecol { width: 23.68%; }
 		.twocol { 	width: 15.2%; }
 		.twohalfcol { width: 18.59%; }
+	}
+}	
+	
+.page-template-page-staff-list-php {
+	#trainer-list {
 		
 		.trainer {
 			.photo {
